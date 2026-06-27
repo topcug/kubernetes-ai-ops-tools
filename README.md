@@ -4,11 +4,13 @@ A collection of small CLI tools for working with Kubernetes and AI infrastructur
 
 ## Tools
 
-- [inboxr](https://github.com/topcug/inboxr) — Synthetic workspace generator for training and evaluating AI agents. Produces realistic simulated digital workspaces (Gmail, Slack, Calendar, Drive) with personas and competing priorities.
-- [k8s-runtime-replay](https://github.com/topcug/k8s-runtime-replay) — Repeatable Kubernetes runtime behavior scenarios for testing detections, validating Falco rules, and running security workshops.
-- [kubectl-triage](https://github.com/topcug/kubectl-triage) — Collapses the first 60 seconds of Kubernetes incident triage into a single command.
-- [secclear-cli](https://github.com/topcug/secclear-cli) — Aggregates output from multiple Kubernetes security scanners into a single clean report.
-- [sockscope](https://github.com/topcug/sockscope) — Shows what a Linux process is actually talking to at the socket level.
+| | Tool | Description |
+|---|---|---|
+| [![inboxr](https://raw.githubusercontent.com/topcug/inboxr/main/assets/inboxr_pipeline_overview.svg)](https://github.com/topcug/inboxr) | [inboxr](https://github.com/topcug/inboxr) | Synthetic workspace generator for training and evaluating AI agents. Produces realistic simulated digital workspaces (Gmail, Slack, Calendar, Drive) with personas and competing priorities. |
+| [![k8s-runtime-replay](https://raw.githubusercontent.com/topcug/k8s-runtime-replay/main/k8s-runtime-replay.png)](https://github.com/topcug/k8s-runtime-replay) | [k8s-runtime-replay](https://github.com/topcug/k8s-runtime-replay) | Repeatable Kubernetes runtime behavior scenarios for testing detections, validating Falco rules, and running security workshops. |
+| [![kubectl-triage](https://raw.githubusercontent.com/topcug/kubectl-triage/main/kubectl-triage.png)](https://github.com/topcug/kubectl-triage) | [kubectl-triage](https://github.com/topcug/kubectl-triage) | Collapses the first 60 seconds of Kubernetes incident triage into a single command. |
+| [![secclear-cli](https://raw.githubusercontent.com/topcug/secclear-cli/main/assets/secclear-report.gif)](https://github.com/topcug/secclear-cli) | [secclear-cli](https://github.com/topcug/secclear-cli) | Aggregates output from multiple Kubernetes security scanners into a single clean report. |
+| [![sockscope](https://raw.githubusercontent.com/topcug/sockscope/main/sockscope.png)](https://github.com/topcug/sockscope) | [sockscope](https://github.com/topcug/sockscope) | Shows what a Linux process is actually talking to at the socket level. |
 
 ## Design approach
 
