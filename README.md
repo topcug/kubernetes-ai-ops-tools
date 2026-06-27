@@ -1,5 +1,9 @@
 # kubernetes-ai-ops-tools
 
+<p align="center">
+  <img src="./ai-ops.png" alt="kubernetes-ai-ops-tools" width="400" />
+</p>
+
 A collection of small CLI tools for working with Kubernetes and AI infrastructure. Each tool is independent, focused on one problem, and built to fit into existing terminal workflows.
 
 ## Tools
