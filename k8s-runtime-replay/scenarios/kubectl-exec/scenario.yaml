@@ -1,0 +1,46 @@
+id: kubectl-exec
+version: "0.1.0"
+title: kubectl exec into running container
+goal: Reproduce a kubectl exec event to validate audit log and runtime detections
+safety: safe
+namespace: k8s-replay
+
+deploy:
+  manifests:
+    - manifests/workload.yaml
+
+workload:
+  selector: scenario=kubectl-exec
+  pod_name: kubectl-exec-target
+  container: target
+
+trigger:
+  kind: kubectl-exec
+  command:
+    - sh
+    - -c
+    - 'echo "kubectl-exec triggered at $(date)"; uname -a; id'
+
+behavior:
+  description: kubectl exec event generated against running container
+  evidence:
+    - exec_succeeded: true
+
+detection:
+  semantics:
+    - exec or attach to container via kubectl
+  falco:
+    enabled: true
+    search_patterns:
+      - exec
+      - attach
+    correlation:
+      namespace: k8s-replay
+      workload_selector: scenario=kubectl-exec
+
+timeouts:
+  ready_seconds: 60
+  detect_seconds: 20
+
+cleanup:
+  script: cleanup.sh

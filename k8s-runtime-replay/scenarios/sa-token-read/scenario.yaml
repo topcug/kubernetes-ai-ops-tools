@@ -1,0 +1,49 @@
+id: sa-token-read
+version: "0.1.0"
+title: Service account token read inside container
+goal: Reproduce a service account token read from within a running container
+safety: safe
+namespace: k8s-replay
+
+deploy:
+  manifests:
+    - manifests/serviceaccount.yaml
+    - manifests/workload.yaml
+
+workload:
+  selector: scenario=sa-token-read
+  pod_name: sa-token-read-target
+  container: target
+
+trigger:
+  kind: kubectl-exec
+  command:
+    - sh
+    - -c
+    - 'cat /var/run/secrets/kubernetes.io/serviceaccount/token'
+
+behavior:
+  description: service account token file read inside container
+  evidence:
+    - exec_succeeded: true
+    - file_readable: /var/run/secrets/kubernetes.io/serviceaccount/token
+
+detection:
+  semantics:
+    - sensitive file read inside container
+  falco:
+    enabled: true
+    search_patterns:
+      - sensitive file
+      - token
+      - serviceaccount
+    correlation:
+      namespace: k8s-replay
+      workload_selector: scenario=sa-token-read
+
+timeouts:
+  ready_seconds: 60
+  detect_seconds: 20
+
+cleanup:
+  script: cleanup.sh

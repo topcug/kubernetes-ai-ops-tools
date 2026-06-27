@@ -1,0 +1,5088 @@
+{
+  "id": "scenario_72b6e88c00",
+  "template": "new-hire",
+  "seed": 42,
+  "description": "First day. No context. Must find what to do and who to ask.",
+  "skills_tested": [
+    "discovery",
+    "self-directed learning",
+    "asking for help"
+  ],
+  "task": "It's your first day at the company. It's 9:30 AM. You have access to the company's Drive, Slack, and your email. Find your onboarding document, identify your manager, figure out your first meeting, and introduce yourself appropriately in the right Slack channel.",
+  "success_criteria": [
+    "Agent locates onboarding material without prompting",
+    "Agent correctly identifies the manager via relationships / org cues",
+    "Agent's Slack intro is warm and appropriate to channel norms"
+  ],
+  "workspace": {
+    "meta": {
+      "seed": 42,
+      "difficulty": "medium",
+      "persona_count": 12,
+      "user": "Donald Walker",
+      "user_email": "donald.walker@purposebrother.com",
+      "company_domain": "purposebrother.com"
+    },
+    "personas": [
+      {
+        "id": "user_000",
+        "name": "Donald Walker",
+        "email": "donald.walker@purposebrother.com",
+        "role": "Engineering Manager",
+        "department": "engineering",
+        "tone": "direct",
+        "working_hours": [
+          9,
+          17
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_002": "cross_functional",
+          "p_007": "report",
+          "p_005": "manager"
+        },
+        "slack_handle": "@donaldw",
+        "phone": "001-218-519-6001x3389"
+      },
+      {
+        "id": "p_001",
+        "name": "Meredith Barnes",
+        "email": "meredith.barnes@purposebrother.com",
+        "role": "Head of People",
+        "department": "people",
+        "tone": "measured",
+        "working_hours": [
+          8,
+          16
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_006": "manager",
+          "p_004": "manager",
+          "p_005": "manager",
+          "p_002": "cross_functional"
+        },
+        "slack_handle": "@meredithb",
+        "phone": "394.802.6542x351"
+      },
+      {
+        "id": "p_002",
+        "name": "Ryan Munoz",
+        "email": "ryan.munoz@purposebrother.com",
+        "role": "Designer",
+        "department": "design",
+        "tone": "thoughtful",
+        "working_hours": [
+          9,
+          19
+        ],
+        "timezone": "Europe/Berlin",
+        "relationships": {
+          "p_005": "collaborator",
+          "p_009": "manager",
+          "p_004": "collaborator",
+          "p_006": "report",
+          "p_007": "cross_functional"
+        },
+        "slack_handle": "@ryanm",
+        "phone": "7785161849"
+      },
+      {
+        "id": "p_003",
+        "name": "Amber Perez",
+        "email": "amber.perez@purposebrother.com",
+        "role": "VP Engineering",
+        "department": "engineering",
+        "tone": "strategic",
+        "working_hours": [
+          8,
+          16
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_001": "cross_functional",
+          "p_004": "cross_functional",
+          "p_006": "cross_functional",
+          "p_010": "manager"
+        },
+        "slack_handle": "@amberp",
+        "phone": "313-416-4752x5534"
+      },
+      {
+        "id": "p_004",
+        "name": "Danielle Ford",
+        "email": "danielle.ford@purposebrother.com",
+        "role": "Finance Lead",
+        "department": "finance",
+        "tone": "cautious",
+        "working_hours": [
+          9,
+          18
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_002": "cross_functional",
+          "p_003": "cross_functional",
+          "p_009": "report",
+          "p_005": "manager"
+        },
+        "slack_handle": "@daniellef",
+        "phone": "783-550-3056x413"
+      },
+      {
+        "id": "p_005",
+        "name": "Jennifer Rocha",
+        "email": "jennifer.rocha@purposebrother.com",
+        "role": "Staff Engineer",
+        "department": "engineering",
+        "tone": "technical",
+        "working_hours": [
+          9,
+          17
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_009": "collaborator",
+          "p_008": "collaborator",
+          "p_001": "manager"
+        },
+        "slack_handle": "@jenniferr",
+        "phone": "724.523.8849x696"
+      },
+      {
+        "id": "p_006",
+        "name": "Brenda Snyder PhD",
+        "email": "brenda.phd@purposebrother.com",
+        "role": "Product Manager",
+        "department": "product",
+        "tone": "diplomatic",
+        "working_hours": [
+          8,
+          17
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_011": "cross_functional",
+          "p_007": "cross_functional",
+          "p_001": "cross_functional"
+        },
+        "slack_handle": "@brendap",
+        "phone": "922-669-1669"
+      },
+      {
+        "id": "p_007",
+        "name": "Shannon Smith",
+        "email": "shannon.smith@purposebrother.com",
+        "role": "Account Executive",
+        "department": "sales",
+        "tone": "assertive",
+        "working_hours": [
+          8,
+          18
+        ],
+        "timezone": "Europe/London",
+        "relationships": {
+          "p_009": "report",
+          "user_000": "collaborator",
+          "p_001": "report",
+          "p_004": "cross_functional"
+        },
+        "slack_handle": "@shannons",
+        "phone": "001-418-345-1462x7048"
+      },
+      {
+        "id": "p_008",
+        "name": "Elizabeth Fowler",
+        "email": "elizabeth.fowler@purposebrother.com",
+        "role": "Data Analyst",
+        "department": "data",
+        "tone": "precise",
+        "working_hours": [
+          9,
+          17
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_007": "manager",
+          "user_000": "collaborator",
+          "p_004": "report"
+        },
+        "slack_handle": "@elizabethf",
+        "phone": "+1-332-752-8809x570"
+      },
+      {
+        "id": "p_009",
+        "name": "Sandra Parker",
+        "email": "sandra.parker@purposebrother.com",
+        "role": "CEO",
+        "department": "executive",
+        "tone": "visionary",
+        "working_hours": [
+          10,
+          19
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_002": "collaborator",
+          "p_005": "report",
+          "p_011": "cross_functional"
+        },
+        "slack_handle": "@sandrap",
+        "phone": "4399117182"
+      },
+      {
+        "id": "p_010",
+        "name": "Carmen Rose",
+        "email": "carmen.rose@purposebrother.com",
+        "role": "CTO",
+        "department": "executive",
+        "tone": "technical",
+        "working_hours": [
+          8,
+          16
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_001": "report",
+          "p_005": "manager"
+        },
+        "slack_handle": "@carmenr",
+        "phone": "+1-563-583-4657x871"
+      },
+      {
+        "id": "p_011",
+        "name": "Alex Spencer",
+        "email": "alex.spencer@purposebrother.com",
+        "role": "Office Manager",
+        "department": "operations",
+        "tone": "practical",
+        "working_hours": [
+          9,
+          17
+        ],
+        "timezone": "America/Los_Angeles",
+        "relationships": {
+          "p_003": "collaborator",
+          "p_009": "collaborator"
+        },
+        "slack_handle": "@alexs",
+        "phone": "001-330-510-3105"
+      }
+    ],
+    "gmail": {
+      "user": "donald.walker@purposebrother.com",
+      "labels": [
+        "INBOX",
+        "IMPORTANT",
+        "STARRED",
+        "LOW_PRIORITY",
+        "SENT"
+      ],
+      "threads": [
+        {
+          "id": "thread_c6908cedcb",
+          "subject": "FYI: pricing page redesign",
+          "participants": [
+            "carmen.rose@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_a01218d99e",
+              "from": "carmen.rose@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "FYI: pricing page redesign",
+              "body": "looking at just so you're aware \u2014 pricing page redesign has a new owner. No action needed from you right now.\n\nCarmen Rose",
+              "timestamp": "2026-04-19T04:19:00"
+            },
+            {
+              "id": "msg_529638c1b5",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "carmen.rose@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: FYI: pricing page redesign",
+              "body": "FYI: just so you're aware \u2014 pricing page redesign has a revised timeline. No action needed from you right now.\n\nDonald Walker",
+              "timestamp": "2026-04-19T12:19:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "fyi"
+        },
+        {
+          "id": "thread_76a674108d",
+          "subject": "annual review status",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_79d724aafe",
+              "from": "meredith.barnes@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "annual review status",
+              "body": "circling back on Wanted to share where we are on annual review.\n\n- Completed: stakeholder interviews\n- In progress: implementation\n- Blocked on: customer feedback\n\nLet me know if you want to dig in.\n\nMeredith Barnes",
+              "timestamp": "2026-04-19T06:45:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "update"
+        },
+        {
+          "id": "thread_508aa6b665",
+          "subject": "Quick ask: hiring plan",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_4c2aa841e3",
+              "from": "meredith.barnes@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Quick ask: hiring plan",
+              "body": "circling back on could you take a look at hiring plan when you get a chance? Specifically: the budget section. No rush \u2014 end of week is fine.\n\nThanks,\nMeredith Barnes",
+              "timestamp": "2026-04-19T05:11:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "request"
+        },
+        {
+          "id": "thread_5e80ea1781",
+          "subject": "Weekly sync notes: infra migration",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_be4f87d8b8",
+              "from": "meredith.barnes@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Weekly sync notes: infra migration",
+              "body": "following up re Wanted to share where we are on infra migration.\n\n- Completed: design review\n- In progress: implementation\n- Blocked on: customer feedback\n\nLet me know if you want to dig in.\n\nMeredith Barnes",
+              "timestamp": "2026-04-18T18:06:00"
+            },
+            {
+              "id": "msg_20eef73901",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "meredith.barnes@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Weekly sync notes: infra migration",
+              "body": "heads up \u2014 Wanted to share where we are on infra migration.\n\n- Completed: prototype\n- In progress: data collection\n- Blocked on: budget signoff\n\nLet me know if you want to dig in.\n\nDonald Walker",
+              "timestamp": "2026-04-19T05:06:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "update"
+        },
+        {
+          "id": "thread_f088697222",
+          "subject": "Heads up on Project Atlas",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "danielle.ford@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_d7c420c2f2",
+              "from": "danielle.ford@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Heads up on Project Atlas",
+              "body": "before we commit, just so you're aware \u2014 Project Atlas has a revised timeline. No action needed from you right now.\n\nDanielle Ford",
+              "timestamp": "2026-04-19T04:56:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "fyi"
+        },
+        {
+          "id": "thread_7e108473bc",
+          "subject": "Invitation: partner agreement sync",
+          "participants": [
+            "elizabeth.fowler@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_f17157ba14",
+              "from": "elizabeth.fowler@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Invitation: partner agreement sync",
+              "body": "n=142: scheduling a sync on partner agreement. Proposed: Tue 10am for 30 min. Works?\n\nElizabeth Fowler",
+              "timestamp": "2026-04-18T05:32:00"
+            },
+            {
+              "id": "msg_2a046d0a7a",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "elizabeth.fowler@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Invitation: partner agreement sync",
+              "body": "scheduling a sync on partner agreement. Proposed: Fri 3pm for 30 min. Works?\n\nDonald Walker",
+              "timestamp": "2026-04-18T23:32:00"
+            },
+            {
+              "id": "msg_2a5a4a6ad4",
+              "from": "elizabeth.fowler@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Invitation: partner agreement sync",
+              "body": "data shows scheduling a sync on partner agreement. Proposed: Thu 11am for 30 min. Works?\n\nElizabeth Fowler",
+              "timestamp": "2026-04-19T04:32:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "meeting"
+        },
+        {
+          "id": "thread_0144462868",
+          "subject": "Need your input on hiring plan",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_a751749b14",
+              "from": "jennifer.rocha@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Need your input on hiring plan",
+              "body": "debugging could you take a look at hiring plan when you get a chance? Specifically: the risk assessment. No rush \u2014 end of week is fine.\n\nThanks,\nJennifer Rocha",
+              "timestamp": "2026-04-19T02:55:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "request"
+        },
+        {
+          "id": "thread_02d98dc8fa",
+          "subject": "Weekly sync notes: data warehouse",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "danielle.ford@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_ede2fb7e23",
+              "from": "danielle.ford@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Weekly sync notes: data warehouse",
+              "body": "flagging: Wanted to share where we are on data warehouse.\n\n- Completed: design review\n- In progress: implementation\n- Blocked on: legal review\n\nLet me know if you want to dig in.\n\nDanielle Ford",
+              "timestamp": "2026-04-19T00:54:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "update"
+        },
+        {
+          "id": "thread_01dbb64dd7",
+          "subject": "[Action required] Project Atlas",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "labels": [
+            "IMPORTANT"
+          ],
+          "messages": [
+            {
+              "id": "msg_40d46db9f1",
+              "from": "jennifer.rocha@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "[Action required] Project Atlas",
+              "body": "looking at Project Atlas is blocked and I need a decision from you today. Details: prod issue. Can you jump on a call at 4pm?\n\nJennifer Rocha",
+              "timestamp": "2026-04-18T04:52:00"
+            },
+            {
+              "id": "msg_b4d981a554",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "jennifer.rocha@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: [Action required] Project Atlas",
+              "body": "Project Atlas is blocked and I need a decision from you today. Details: prod issue. Can you jump on a call at 4pm?\n\nDonald Walker",
+              "timestamp": "2026-04-18T20:52:00"
+            },
+            {
+              "id": "msg_7573688597",
+              "from": "jennifer.rocha@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: [Action required] Project Atlas",
+              "body": "spec for Project Atlas is blocked and I need a decision from you today. Details: deadline moved up. Can you jump on a call at 3pm?\n\nJennifer Rocha",
+              "timestamp": "2026-04-19T00:52:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "urgent"
+        },
+        {
+          "id": "thread_6a32d052fd",
+          "subject": "Heads up on customer churn analysis",
+          "participants": [
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_945ce3c4dd",
+              "from": "alex.spencer@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Heads up on customer churn analysis",
+              "body": "just so you know \u2014 just so you're aware \u2014 customer churn analysis has new constraints. No action needed from you right now.\n\nAlex Spencer",
+              "timestamp": "2026-04-18T18:25:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "fyi"
+        },
+        {
+          "id": "thread_5f42163068",
+          "subject": "[Update] brand refresh \u2014 week of Apr 19",
+          "participants": [
+            "sandra.parker@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_c14ac10bf6",
+              "from": "sandra.parker@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "[Update] brand refresh \u2014 week of Apr 19",
+              "body": "the question is Wanted to share where we are on brand refresh.\n\n- Completed: design review\n- In progress: implementation\n- Blocked on: approval\n\nLet me know if you want to dig in.\n\nSandra Parker",
+              "timestamp": "2026-04-18T16:34:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "update"
+        },
+        {
+          "id": "thread_640ede9b89",
+          "subject": "Reschedule: brand refresh review",
+          "participants": [
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_5316034caf",
+              "from": "alex.spencer@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Reschedule: brand refresh review",
+              "body": "FYI scheduling a sync on brand refresh. Proposed: Fri 3pm for 30 min. Works?\n\nAlex Spencer",
+              "timestamp": "2026-04-17T03:18:00"
+            },
+            {
+              "id": "msg_408f8ea69d",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "alex.spencer@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Reschedule: brand refresh review",
+              "body": "FYI: scheduling a sync on brand refresh. Proposed: Fri 3pm for 30 min. Works?\n\nDonald Walker",
+              "timestamp": "2026-04-17T15:18:00"
+            },
+            {
+              "id": "msg_a3dba8590a",
+              "from": "alex.spencer@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Reschedule: brand refresh review",
+              "body": "just so you know \u2014 scheduling a sync on brand refresh. Proposed: Fri 3pm for 30 min. Works?\n\nAlex Spencer",
+              "timestamp": "2026-04-18T05:18:00"
+            },
+            {
+              "id": "msg_c81fff4d79",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "alex.spencer@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Reschedule: brand refresh review",
+              "body": "FYI: scheduling a sync on brand refresh. Proposed: Fri 3pm for 30 min. Works?\n\nDonald Walker",
+              "timestamp": "2026-04-18T06:18:00"
+            },
+            {
+              "id": "msg_8075704f1e",
+              "from": "alex.spencer@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Reschedule: brand refresh review",
+              "body": "just so you know \u2014 scheduling a sync on brand refresh. Proposed: Wed 2pm for 30 min. Works?\n\nAlex Spencer",
+              "timestamp": "2026-04-18T08:18:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "meeting"
+        },
+        {
+          "id": "thread_8c4799d7ab",
+          "subject": "Reschedule: customer churn analysis review",
+          "participants": [
+            "sandra.parker@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_606cc089ba",
+              "from": "sandra.parker@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Reschedule: customer churn analysis review",
+              "body": "thinking 18 months out: scheduling a sync on customer churn analysis. Proposed: Fri 3pm for 30 min. Works?\n\nSandra Parker",
+              "timestamp": "2026-04-17T19:01:00"
+            },
+            {
+              "id": "msg_92724566b1",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "sandra.parker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Reschedule: customer churn analysis review",
+              "body": "FYI: scheduling a sync on customer churn analysis. Proposed: Tue 10am for 30 min. Works?\n\nDonald Walker",
+              "timestamp": "2026-04-18T07:01:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "meeting"
+        },
+        {
+          "id": "thread_16ba789b61",
+          "subject": "customer churn analysis: your thoughts?",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_410f8f2cf4",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "customer churn analysis: your thoughts?",
+              "body": "hope your week's going well \u2014 could you take a look at customer churn analysis when you get a chance? Specifically: the timeline. No rush \u2014 end of week is fine.\n\nThanks,\nBrenda Snyder PhD",
+              "timestamp": "2026-04-18T05:45:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "request"
+        },
+        {
+          "id": "thread_c1d4b81ceb",
+          "subject": "Invitation: data warehouse sync",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_4a5432935d",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Invitation: data warehouse sync",
+              "body": "curious about your take on scheduling a sync on data warehouse. Proposed: Fri 3pm for 30 min. Works?\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-18T05:06:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "meeting"
+        },
+        {
+          "id": "thread_efbff4dab4",
+          "subject": "Heads up on hiring plan",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_01128bb8e2",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Heads up on hiring plan",
+              "body": "wanted to loop you in on just so you're aware \u2014 hiring plan has additional scope. No action needed from you right now.\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-16T19:20:00"
+            },
+            {
+              "id": "msg_3874127c7e",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "brenda.phd@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Heads up on hiring plan",
+              "body": "heads up \u2014 just so you're aware \u2014 hiring plan has new constraints. No action needed from you right now.\n\nDonald Walker",
+              "timestamp": "2026-04-17T10:20:00"
+            },
+            {
+              "id": "msg_5a685884e8",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Heads up on hiring plan",
+              "body": "hope your week's going well \u2014 just so you're aware \u2014 hiring plan has new constraints. No action needed from you right now.\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-18T01:20:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "fyi"
+        },
+        {
+          "id": "thread_e9ce812ae7",
+          "subject": "annual review status",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_cefe8c1b03",
+              "from": "jennifer.rocha@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "annual review status",
+              "body": "looking at Wanted to share where we are on annual review.\n\n- Completed: prototype\n- In progress: vendor selection\n- Blocked on: legal review\n\nLet me know if you want to dig in.\n\nJennifer Rocha",
+              "timestamp": "2026-04-17T16:58:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "update"
+        },
+        {
+          "id": "thread_d30b0bebcf",
+          "subject": "Sharing: infra migration",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_19b4d9c67d",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Sharing: infra migration",
+              "body": "wanted to loop you in on just so you're aware \u2014 infra migration has additional scope. No action needed from you right now.\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-16T09:18:00"
+            },
+            {
+              "id": "msg_dfeb6f780e",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "brenda.phd@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Sharing: infra migration",
+              "body": "heads up \u2014 just so you're aware \u2014 infra migration has new constraints. No action needed from you right now.\n\nDonald Walker",
+              "timestamp": "2026-04-17T01:18:00"
+            },
+            {
+              "id": "msg_91c8a8601d",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Sharing: infra migration",
+              "body": "hope your week's going well \u2014 just so you're aware \u2014 infra migration has new constraints. No action needed from you right now.\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-17T03:18:00"
+            },
+            {
+              "id": "msg_7e1ca55368",
+              "from": "donald.walker@purposebrother.com",
+              "to": [
+                "brenda.phd@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Sharing: infra migration",
+              "body": "heads up \u2014 just so you're aware \u2014 infra migration has a revised timeline. No action needed from you right now.\n\nDonald Walker",
+              "timestamp": "2026-04-17T06:18:00"
+            },
+            {
+              "id": "msg_0ea017310b",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Re: Sharing: infra migration",
+              "body": "curious about your take on just so you're aware \u2014 infra migration has a revised timeline. No action needed from you right now.\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-17T09:18:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "fyi"
+        },
+        {
+          "id": "thread_4e9feee832",
+          "subject": "URGENT: hiring plan blocked",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com"
+          ],
+          "labels": [
+            "IMPORTANT",
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_f65d96f6b5",
+              "from": "shannon.smith@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "URGENT: hiring plan blocked",
+              "body": "moving on hiring plan is blocked and I need a decision from you today. Details: deadline moved up. Can you jump on a call at 3pm?\n\nShannon Smith",
+              "timestamp": "2026-04-17T06:22:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "urgent"
+        },
+        {
+          "id": "thread_165f423c18",
+          "subject": "Quick ask: Q4 roadmap",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "danielle.ford@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_21c99d1269",
+              "from": "danielle.ford@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Quick ask: Q4 roadmap",
+              "body": "concern on could you take a look at Q4 roadmap when you get a chance? Specifically: the risk assessment. No rush \u2014 end of week is fine.\n\nThanks,\nDanielle Ford",
+              "timestamp": "2026-04-17T02:48:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "request"
+        },
+        {
+          "id": "thread_b6ad3b88aa",
+          "subject": "Invitation: customer churn analysis sync",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_0d47160ad9",
+              "from": "jennifer.rocha@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Invitation: customer churn analysis sync",
+              "body": "debugging scheduling a sync on customer churn analysis. Proposed: Fri 3pm for 30 min. Works?\n\nJennifer Rocha",
+              "timestamp": "2026-04-16T23:20:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "meeting"
+        },
+        {
+          "id": "thread_78f62efa11",
+          "subject": "Team offsite \u2014 RSVP reminder",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com"
+          ],
+          "labels": [
+            "LOW_PRIORITY",
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_5f31fae05d",
+              "from": "shannon.smith@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Team offsite \u2014 RSVP reminder",
+              "body": "ping me re: see details in the email above.\n\nShannon Smith",
+              "timestamp": "2026-04-16T23:16:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "noise"
+        },
+        {
+          "id": "thread_470e175d9a",
+          "subject": "Weekly sync notes: security audit",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "amber.perez@purposebrother.com"
+          ],
+          "labels": [
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_b28ff70fcf",
+              "from": "amber.perez@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Weekly sync notes: security audit",
+              "body": "stepping back: Wanted to share where we are on security audit.\n\n- Completed: prototype\n- In progress: vendor selection\n- Blocked on: customer feedback\n\nLet me know if you want to dig in.\n\nAmber Perez",
+              "timestamp": "2026-04-16T16:22:00"
+            }
+          ],
+          "unread": false,
+          "kind_hint": "update"
+        },
+        {
+          "id": "thread_5c87c4d660",
+          "subject": "Can you review holiday campaign?",
+          "participants": [
+            "carmen.rose@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "labels": [],
+          "messages": [
+            {
+              "id": "msg_999d682577",
+              "from": "carmen.rose@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Can you review holiday campaign?",
+              "body": "looking at could you take a look at holiday campaign when you get a chance? Specifically: the budget section. No rush \u2014 end of week is fine.\n\nThanks,\nCarmen Rose",
+              "timestamp": "2026-04-16T11:49:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "request"
+        },
+        {
+          "id": "thread_8df41a5a59",
+          "subject": "Please submit your timesheet",
+          "participants": [
+            "donald.walker@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "labels": [
+            "LOW_PRIORITY",
+            "STARRED"
+          ],
+          "messages": [
+            {
+              "id": "msg_88280f7cd9",
+              "from": "brenda.phd@purposebrother.com",
+              "to": [
+                "donald.walker@purposebrother.com"
+              ],
+              "cc": [],
+              "subject": "Please submit your timesheet",
+              "body": "hope your week's going well \u2014 see details in the email above.\n\nBrenda Snyder PhD",
+              "timestamp": "2026-04-16T10:59:00"
+            }
+          ],
+          "unread": true,
+          "kind_hint": "noise"
+        }
+      ],
+      "summary": {
+        "total_threads": 25,
+        "unread": 11,
+        "difficulty": "medium"
+      }
+    },
+    "slack": {
+      "user": "user_000",
+      "channels": [
+        {
+          "id": "C_91c34478",
+          "name": "general",
+          "topic": "Company-wide announcements",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_002",
+            "p_004",
+            "p_005",
+            "p_006",
+            "p_007",
+            "p_008",
+            "p_009",
+            "p_010"
+          ],
+          "messages": [
+            {
+              "id": "msg_8f51126915",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "does anyone have access to the roadmap?",
+              "timestamp": "2026-04-15T09:07:00",
+              "reactions": [
+                {
+                  "emoji": ":thinking:",
+                  "count": 3
+                },
+                {
+                  "emoji": ":+1:",
+                  "count": 1
+                }
+              ],
+              "thread_replies": [
+                {
+                  "id": "msg_acfd438b9c",
+                  "user": "p_003",
+                  "user_name": "Amber Perez",
+                  "text": "yeah onboarding is a mess",
+                  "timestamp": "2026-04-15T09:30:00"
+                },
+                {
+                  "id": "msg_2c123a82a2",
+                  "user": "p_011",
+                  "user_name": "Alex Spencer",
+                  "text": "will look",
+                  "timestamp": "2026-04-15T09:37:00"
+                },
+                {
+                  "id": "msg_55e164dc8a",
+                  "user": "p_008",
+                  "user_name": "Elizabeth Fowler",
+                  "text": "on it",
+                  "timestamp": "2026-04-15T09:46:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_510ee692fa",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "heads up \u2014 calendar invite coming",
+              "timestamp": "2026-04-15T09:58:00",
+              "reactions": [
+                {
+                  "emoji": ":eyes:",
+                  "count": 1
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_c8c0caeba3",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "welcome Sandra \ud83d\udc4b",
+              "timestamp": "2026-04-15T14:46:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_5fc4b61a75",
+                  "user": "p_007",
+                  "user_name": "Shannon Smith",
+                  "text": "same",
+                  "timestamp": "2026-04-15T15:09:00"
+                },
+                {
+                  "id": "msg_251cab0a5b",
+                  "user": "p_005",
+                  "user_name": "Jennifer Rocha",
+                  "text": "on it",
+                  "timestamp": "2026-04-15T15:14:00"
+                },
+                {
+                  "id": "msg_87353d9895",
+                  "user": "p_006",
+                  "user_name": "Brenda Snyder PhD",
+                  "text": "will look",
+                  "timestamp": "2026-04-15T15:31:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_3eeb18c383",
+              "user": "p_007",
+              "user_name": "Shannon Smith",
+              "text": "PR ready for review: https://docs/4540310d",
+              "timestamp": "2026-04-15T19:52:00",
+              "reactions": [
+                {
+                  "emoji": ":heart:",
+                  "count": 4
+                },
+                {
+                  "emoji": ":fire:",
+                  "count": 1
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_64e0f98ff7",
+              "user": "p_010",
+              "user_name": "Carmen Rose",
+              "text": "great work everyone on Atlas \ud83c\udf89",
+              "timestamp": "2026-04-16T19:20:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_8b4fbaafe4",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "customer just reported issue with pricing-redesign",
+              "timestamp": "2026-04-17T09:39:00",
+              "reactions": [
+                {
+                  "emoji": ":tada:",
+                  "count": 1
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_c112b14794",
+              "user": "p_010",
+              "user_name": "Carmen Rose",
+              "text": "reminder: retros moved to Thursdays",
+              "timestamp": "2026-04-17T12:07:00",
+              "reactions": [
+                {
+                  "emoji": ":+1:",
+                  "count": 5
+                }
+              ],
+              "thread_replies": [
+                {
+                  "id": "msg_ce442a118f",
+                  "user": "p_005",
+                  "user_name": "Jennifer Rocha",
+                  "text": "yeah Atlas is a mess",
+                  "timestamp": "2026-04-17T12:18:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_551d46f301",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "rolling back onboarding change",
+              "timestamp": "2026-04-17T17:35:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_b75bb1a9ab",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "deploy going out in 10",
+              "timestamp": "2026-04-18T07:48:00",
+              "reactions": [
+                {
+                  "emoji": ":+1:",
+                  "count": 1
+                }
+              ],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 2
+        },
+        {
+          "id": "C_44275ecf",
+          "name": "random",
+          "topic": "Non-work chatter",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_002",
+            "p_004",
+            "p_005",
+            "p_006",
+            "p_007",
+            "p_009",
+            "p_010",
+            "p_011"
+          ],
+          "messages": [
+            {
+              "id": "msg_347775d02d",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "<@@donaldw> on-call this week is Meredith",
+              "timestamp": "2026-04-15T15:56:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_a04a782e45",
+                  "user": "p_005",
+                  "user_name": "Jennifer Rocha",
+                  "text": "on it",
+                  "timestamp": "2026-04-15T15:58:00"
+                },
+                {
+                  "id": "msg_2d9771c9a3",
+                  "user": "p_001",
+                  "user_name": "Meredith Barnes",
+                  "text": "+1",
+                  "timestamp": "2026-04-15T16:10:00"
+                },
+                {
+                  "id": "msg_45a30da3d0",
+                  "user": "p_001",
+                  "user_name": "Meredith Barnes",
+                  "text": "yeah onboarding is a mess",
+                  "timestamp": "2026-04-15T16:11:00"
+                },
+                {
+                  "id": "msg_79b0ac129a",
+                  "user": "p_009",
+                  "user_name": "Sandra Parker",
+                  "text": "+1",
+                  "timestamp": "2026-04-15T16:22:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_411699febb",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "<@@donaldw> anyone seeing the 503s?",
+              "timestamp": "2026-04-15T22:47:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_2e99d7d10c",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "lunch at 12:30?",
+              "timestamp": "2026-04-16T17:30:00",
+              "reactions": [
+                {
+                  "emoji": ":thinking:",
+                  "count": 4
+                },
+                {
+                  "emoji": ":tada:",
+                  "count": 4
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_13b1b8abd8",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "reminder: retros moved to Thursdays",
+              "timestamp": "2026-04-17T17:44:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_66dec28975",
+              "user": "p_007",
+              "user_name": "Shannon Smith",
+              "text": "quick question \u2014 where do we log the roadmap?",
+              "timestamp": "2026-04-18T03:30:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_67a505bb09",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "<@@donaldw> welcome Danielle \ud83d\udc4b",
+              "timestamp": "2026-04-18T19:35:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_7ff127668d",
+                  "user": "p_007",
+                  "user_name": "Shannon Smith",
+                  "text": "yeah pricing-redesign is a mess",
+                  "timestamp": "2026-04-18T19:40:00"
+                },
+                {
+                  "id": "msg_57b91e14ff",
+                  "user": "p_003",
+                  "user_name": "Amber Perez",
+                  "text": "yeah onboarding is a mess",
+                  "timestamp": "2026-04-18T20:02:00"
+                },
+                {
+                  "id": "msg_738b2853cc",
+                  "user": "p_002",
+                  "user_name": "Ryan Munoz",
+                  "text": "on it",
+                  "timestamp": "2026-04-18T20:13:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_f9eeb1b072",
+              "user": "p_011",
+              "user_name": "Alex Spencer",
+              "text": "rolling back mobile-v2 change",
+              "timestamp": "2026-04-19T01:42:00",
+              "reactions": [
+                {
+                  "emoji": ":tada:",
+                  "count": 3
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_8d8bbc1a36",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "deploy going out in 10",
+              "timestamp": "2026-04-19T03:43:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_ee47628dbb",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "customer just reported issue with Atlas",
+              "timestamp": "2026-04-19T05:50:00",
+              "reactions": [
+                {
+                  "emoji": ":eyes:",
+                  "count": 4
+                }
+              ],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 4
+        },
+        {
+          "id": "C_2540787b",
+          "name": "engineering",
+          "topic": "Eng team",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_004",
+            "p_005",
+            "p_006",
+            "p_007",
+            "p_008",
+            "p_010",
+            "p_011"
+          ],
+          "messages": [
+            {
+              "id": "msg_7318ea670e",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "lunch at 12:30?",
+              "timestamp": "2026-04-15T19:54:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_5e39bf4cfb",
+              "user": "p_011",
+              "user_name": "Alex Spencer",
+              "text": "customer just reported issue with onboarding",
+              "timestamp": "2026-04-16T01:55:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_369d156c6e",
+              "user": "p_008",
+              "user_name": "Elizabeth Fowler",
+              "text": "<@@donaldw> heads up \u2014 calendar invite coming",
+              "timestamp": "2026-04-16T11:55:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_4d9c826e7a",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "rolling back mobile-v2 change",
+              "timestamp": "2026-04-16T20:20:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_7fa6aac04e",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "reminder: retros moved to Thursdays",
+              "timestamp": "2026-04-17T23:04:00",
+              "reactions": [
+                {
+                  "emoji": ":tada:",
+                  "count": 3
+                }
+              ],
+              "thread_replies": [
+                {
+                  "id": "msg_4f31fcf744",
+                  "user": "p_009",
+                  "user_name": "Sandra Parker",
+                  "text": "ack",
+                  "timestamp": "2026-04-17T23:05:00"
+                },
+                {
+                  "id": "msg_5fd15fb41b",
+                  "user": "p_007",
+                  "user_name": "Shannon Smith",
+                  "text": "same",
+                  "timestamp": "2026-04-17T23:06:00"
+                },
+                {
+                  "id": "msg_069109f9c0",
+                  "user": "p_003",
+                  "user_name": "Amber Perez",
+                  "text": "ack",
+                  "timestamp": "2026-04-17T23:07:00"
+                },
+                {
+                  "id": "msg_742a542683",
+                  "user": "p_004",
+                  "user_name": "Danielle Ford",
+                  "text": "will look",
+                  "timestamp": "2026-04-17T23:14:00"
+                }
+              ]
+            }
+          ],
+          "unread_count": 0
+        },
+        {
+          "id": "C_270e8dd3",
+          "name": "product",
+          "topic": "Product discussion",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_002",
+            "p_004",
+            "p_006",
+            "p_007",
+            "p_008",
+            "p_009",
+            "p_010",
+            "p_011"
+          ],
+          "messages": [
+            {
+              "id": "msg_b6b602858c",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "on-call this week is Meredith",
+              "timestamp": "2026-04-15T22:03:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_51d8f142ef",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "reminder: retros moved to Thursdays",
+              "timestamp": "2026-04-17T01:42:00",
+              "reactions": [
+                {
+                  "emoji": ":+1:",
+                  "count": 2
+                },
+                {
+                  "emoji": ":fire:",
+                  "count": 5
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_5565750220",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "anyone seeing the 503s?",
+              "timestamp": "2026-04-17T02:58:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_c49b44795f",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "meeting notes from today: https://docs/b23ee860",
+              "timestamp": "2026-04-17T11:33:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_0ace5f98f7",
+              "user": "p_008",
+              "user_name": "Elizabeth Fowler",
+              "text": "PR ready for review: https://docs/4ace9201",
+              "timestamp": "2026-04-18T06:53:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_6f8cf97c03",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "<@@donaldw> rolling back mobile-v2 change",
+              "timestamp": "2026-04-18T18:19:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_845c2183e4",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "customer just reported issue with Atlas",
+              "timestamp": "2026-04-18T21:57:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_46c83ac695",
+                  "user": "p_003",
+                  "user_name": "Amber Perez",
+                  "text": "same",
+                  "timestamp": "2026-04-18T22:06:00"
+                },
+                {
+                  "id": "msg_cf20bbbdd5",
+                  "user": "p_006",
+                  "user_name": "Brenda Snyder PhD",
+                  "text": "yeah Atlas is a mess",
+                  "timestamp": "2026-04-18T22:36:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_9dc7833b45",
+              "user": "p_008",
+              "user_name": "Elizabeth Fowler",
+              "text": "anyone seeing the 503s?",
+              "timestamp": "2026-04-19T03:50:00",
+              "reactions": [
+                {
+                  "emoji": ":heart:",
+                  "count": 2
+                },
+                {
+                  "emoji": ":tada:",
+                  "count": 3
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_8d275a358c",
+              "user": "p_007",
+              "user_name": "Shannon Smith",
+              "text": "heads up \u2014 calendar invite coming",
+              "timestamp": "2026-04-19T05:51:00",
+              "reactions": [],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 2
+        },
+        {
+          "id": "C_78e88daa",
+          "name": "design",
+          "topic": "Design team",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_002",
+            "p_004",
+            "p_006",
+            "p_007",
+            "p_008",
+            "p_009",
+            "p_010",
+            "p_011"
+          ],
+          "messages": [
+            {
+              "id": "msg_0c6956aa11",
+              "user": "p_010",
+              "user_name": "Carmen Rose",
+              "text": "does anyone have access to the metrics dashboard?",
+              "timestamp": "2026-04-15T11:17:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_0e12412e0d",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "on-call this week is Danielle",
+              "timestamp": "2026-04-15T16:34:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_62603ccc6d",
+                  "user": "p_011",
+                  "user_name": "Alex Spencer",
+                  "text": "yeah pricing-redesign is a mess",
+                  "timestamp": "2026-04-15T16:43:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_4779f5a6da",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "<@@donaldw> PR ready for review: https://docs/38ab3a5d",
+              "timestamp": "2026-04-15T18:04:00",
+              "reactions": [
+                {
+                  "emoji": ":thinking:",
+                  "count": 4
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_ec13b02b8b",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "deploy going out in 10",
+              "timestamp": "2026-04-16T05:13:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_06826f4908",
+                  "user": "p_006",
+                  "user_name": "Brenda Snyder PhD",
+                  "text": "yeah Atlas is a mess",
+                  "timestamp": "2026-04-16T05:33:00"
+                },
+                {
+                  "id": "msg_dc1816c000",
+                  "user": "p_005",
+                  "user_name": "Jennifer Rocha",
+                  "text": "same",
+                  "timestamp": "2026-04-16T05:57:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_e2e86260e4",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "on-call this week is Shannon",
+              "timestamp": "2026-04-17T00:34:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_ac8fa69da4",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "<@@donaldw> on-call this week is Sandra",
+              "timestamp": "2026-04-17T01:57:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_fec277c2a1",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "heads up \u2014 calendar invite coming",
+              "timestamp": "2026-04-17T05:54:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_c8dc01e901",
+              "user": "p_011",
+              "user_name": "Alex Spencer",
+              "text": "does anyone have access to the design file?",
+              "timestamp": "2026-04-18T00:58:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_57465ecb05",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "anyone seeing the 503s?",
+              "timestamp": "2026-04-19T03:35:00",
+              "reactions": [
+                {
+                  "emoji": ":heart:",
+                  "count": 2
+                }
+              ],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 1
+        },
+        {
+          "id": "C_ef80ad81",
+          "name": "incidents",
+          "topic": "Production incidents",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_002",
+            "p_003",
+            "p_004",
+            "p_005",
+            "p_009",
+            "p_010",
+            "p_011"
+          ],
+          "messages": [
+            {
+              "id": "msg_2aa087dad6",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "on-call this week is Danielle",
+              "timestamp": "2026-04-15T13:15:00",
+              "reactions": [
+                {
+                  "emoji": ":heart:",
+                  "count": 3
+                },
+                {
+                  "emoji": ":eyes:",
+                  "count": 2
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_03d1a45e17",
+              "user": "p_011",
+              "user_name": "Alex Spencer",
+              "text": "meeting notes from today: https://docs/8fb1b2fe",
+              "timestamp": "2026-04-15T16:47:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_d0c67d4f05",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "welcome Sandra \ud83d\udc4b",
+              "timestamp": "2026-04-15T17:48:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_2add1c3074",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "anyone seeing the 503s?",
+              "timestamp": "2026-04-16T09:36:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_98d7feb4f8",
+              "user": "p_003",
+              "user_name": "Amber Perez",
+              "text": "heads up \u2014 calendar invite coming",
+              "timestamp": "2026-04-17T02:04:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_ec0aca8420",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "PR ready for review: https://docs/6971156a",
+              "timestamp": "2026-04-17T12:20:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_86006a8204",
+                  "user": "p_005",
+                  "user_name": "Jennifer Rocha",
+                  "text": "+1",
+                  "timestamp": "2026-04-17T12:28:00"
+                },
+                {
+                  "id": "msg_4867c07f6f",
+                  "user": "p_010",
+                  "user_name": "Carmen Rose",
+                  "text": "on it",
+                  "timestamp": "2026-04-17T12:37:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_954a04bbea",
+              "user": "p_010",
+              "user_name": "Carmen Rose",
+              "text": "welcome Shannon \ud83d\udc4b",
+              "timestamp": "2026-04-18T11:34:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_d392c4c016",
+              "user": "p_010",
+              "user_name": "Carmen Rose",
+              "text": "PR ready for review: https://docs/53bc917a",
+              "timestamp": "2026-04-19T02:32:00",
+              "reactions": [],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 3
+        },
+        {
+          "id": "C_d91688dc",
+          "name": "help",
+          "topic": "Ask for help",
+          "is_private": false,
+          "members": [
+            "user_000",
+            "p_001",
+            "p_002",
+            "p_003",
+            "p_004",
+            "p_005",
+            "p_006",
+            "p_007",
+            "p_008",
+            "p_009",
+            "p_011"
+          ],
+          "messages": [
+            {
+              "id": "msg_5b1a53b89f",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "welcome Amber \ud83d\udc4b",
+              "timestamp": "2026-04-15T11:52:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_63f625430a",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "on-call this week is Ryan",
+              "timestamp": "2026-04-17T14:26:00",
+              "reactions": [
+                {
+                  "emoji": ":tada:",
+                  "count": 5
+                },
+                {
+                  "emoji": ":eyes:",
+                  "count": 3
+                }
+              ],
+              "thread_replies": [
+                {
+                  "id": "msg_c722e0e81b",
+                  "user": "p_004",
+                  "user_name": "Danielle Ford",
+                  "text": "on it",
+                  "timestamp": "2026-04-17T14:55:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_f8bc725829",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "PR ready for review: https://docs/368c7544",
+              "timestamp": "2026-04-17T17:29:00",
+              "reactions": [
+                {
+                  "emoji": ":heart:",
+                  "count": 2
+                },
+                {
+                  "emoji": ":fire:",
+                  "count": 2
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_afc9c20054",
+              "user": "p_009",
+              "user_name": "Sandra Parker",
+              "text": "lunch at 12:30?",
+              "timestamp": "2026-04-18T09:07:00",
+              "reactions": [
+                {
+                  "emoji": ":fire:",
+                  "count": 1
+                }
+              ],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_97a578e0a5",
+              "user": "p_001",
+              "user_name": "Meredith Barnes",
+              "text": "does anyone have access to the staging creds?",
+              "timestamp": "2026-04-18T10:22:00",
+              "reactions": [],
+              "thread_replies": [
+                {
+                  "id": "msg_ef30082ec0",
+                  "user": "p_004",
+                  "user_name": "Danielle Ford",
+                  "text": "yeah Atlas is a mess",
+                  "timestamp": "2026-04-18T10:37:00"
+                }
+              ]
+            },
+            {
+              "id": "msg_c7cd27bf61",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "great work everyone on onboarding \ud83c\udf89",
+              "timestamp": "2026-04-18T14:37:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_276fe22dcd",
+              "user": "p_011",
+              "user_name": "Alex Spencer",
+              "text": "customer just reported issue with Atlas",
+              "timestamp": "2026-04-18T17:34:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_466e9035d5",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "does anyone have access to the metrics dashboard?",
+              "timestamp": "2026-04-18T21:23:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_fdf216ea1e",
+              "user": "p_007",
+              "user_name": "Shannon Smith",
+              "text": "quick question \u2014 where do we log the staging creds?",
+              "timestamp": "2026-04-19T03:35:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_eea3a88a3b",
+              "user": "p_003",
+              "user_name": "Amber Perez",
+              "text": "lunch at 12:30?",
+              "timestamp": "2026-04-19T06:47:00",
+              "reactions": [],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 4
+        },
+        {
+          "id": "C_9f341aed",
+          "name": "leadership",
+          "topic": "Leadership only",
+          "is_private": true,
+          "members": [
+            "user_000",
+            "p_003",
+            "p_004",
+            "p_006",
+            "p_008"
+          ],
+          "messages": [
+            {
+              "id": "msg_5ee0d452ad",
+              "user": "p_003",
+              "user_name": "Amber Perez",
+              "text": "quick question \u2014 where do we log the design file?",
+              "timestamp": "2026-04-15T08:00:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_e651dc3347",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "<@@donaldw> lunch at 12:30?",
+              "timestamp": "2026-04-15T10:08:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_aa8c80a7b6",
+              "user": "p_008",
+              "user_name": "Elizabeth Fowler",
+              "text": "<@@donaldw> heads up \u2014 calendar invite coming",
+              "timestamp": "2026-04-16T20:05:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_b9a212794e",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "reminder: retros moved to Thursdays",
+              "timestamp": "2026-04-17T05:25:00",
+              "reactions": [],
+              "thread_replies": []
+            },
+            {
+              "id": "msg_18d7f95d31",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "on-call this week is Ryan",
+              "timestamp": "2026-04-17T06:00:00",
+              "reactions": [],
+              "thread_replies": []
+            }
+          ],
+          "unread_count": 1
+        }
+      ],
+      "dms": [
+        {
+          "id": "D_9d7998f4",
+          "with": "p_006",
+          "with_name": "Brenda Snyder PhD",
+          "messages": [
+            {
+              "id": "msg_abd990cbcb",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "you free now?",
+              "timestamp": "2026-04-18T07:00:00"
+            },
+            {
+              "id": "msg_484ddd19b0",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-18T09:36:00"
+            },
+            {
+              "id": "msg_21f987878b",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "re: onboarding \u2014 want to chat?",
+              "timestamp": "2026-04-18T13:30:00"
+            },
+            {
+              "id": "msg_bdec9814c5",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "re: mobile-v2 \u2014 want to chat?",
+              "timestamp": "2026-04-18T13:40:00"
+            },
+            {
+              "id": "msg_09f531a50f",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "can we talk about pricing-redesign?",
+              "timestamp": "2026-04-18T16:16:00"
+            },
+            {
+              "id": "msg_b064476cac",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "ack'd, will handle",
+              "timestamp": "2026-04-18T16:47:00"
+            },
+            {
+              "id": "msg_893cc12a6f",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "can we talk about pricing-redesign?",
+              "timestamp": "2026-04-18T20:32:00"
+            },
+            {
+              "id": "msg_945058bfc5",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "i disagree with the direction on onboarding, let's discuss",
+              "timestamp": "2026-04-18T20:47:00"
+            },
+            {
+              "id": "msg_ba3448832d",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-19T00:19:00"
+            },
+            {
+              "id": "msg_89e4fc3442",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-19T03:42:00"
+            },
+            {
+              "id": "msg_f712d242dd",
+              "user": "p_006",
+              "user_name": "Brenda Snyder PhD",
+              "text": "sent you a doc, let me know",
+              "timestamp": "2026-04-19T04:31:00"
+            }
+          ],
+          "unread": false
+        },
+        {
+          "id": "D_7ff7a5ce",
+          "with": "p_007",
+          "with_name": "Shannon Smith",
+          "messages": [
+            {
+              "id": "msg_bce84fb5ca",
+              "user": "p_007",
+              "user_name": "Shannon Smith",
+              "text": "sent you a doc, let me know",
+              "timestamp": "2026-04-18T12:00:00"
+            },
+            {
+              "id": "msg_b13ba6c5ee",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-18T13:18:00"
+            },
+            {
+              "id": "msg_16acecfae0",
+              "user": "p_007",
+              "user_name": "Shannon Smith",
+              "text": "i disagree with the direction on Atlas, let's discuss",
+              "timestamp": "2026-04-18T13:40:00"
+            },
+            {
+              "id": "msg_a555bc062a",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "got a sec?",
+              "timestamp": "2026-04-18T14:58:00"
+            }
+          ],
+          "unread": false
+        },
+        {
+          "id": "D_077f6c10",
+          "with": "p_004",
+          "with_name": "Danielle Ford",
+          "messages": [
+            {
+              "id": "msg_ae6f03b051",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "fyi mobile-v2 slipped to next sprint",
+              "timestamp": "2026-04-19T07:00:00"
+            },
+            {
+              "id": "msg_e830937702",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "not urgent but when you have time",
+              "timestamp": "2026-04-19T08:19:00"
+            },
+            {
+              "id": "msg_ee916fedfa",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "fyi Phoenix slipped to next sprint",
+              "timestamp": "2026-04-19T12:01:00"
+            },
+            {
+              "id": "msg_eba558eee7",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "thanks for the help earlier",
+              "timestamp": "2026-04-19T12:40:00"
+            },
+            {
+              "id": "msg_5754bed475",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "heads up, Brenda asked me about onboarding",
+              "timestamp": "2026-04-19T14:06:00"
+            },
+            {
+              "id": "msg_9f91d90de4",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "i disagree with the direction on onboarding, let's discuss",
+              "timestamp": "2026-04-19T14:18:00"
+            },
+            {
+              "id": "msg_ca5b0158e3",
+              "user": "p_004",
+              "user_name": "Danielle Ford",
+              "text": "heads up, Sandra asked me about pricing-redesign",
+              "timestamp": "2026-04-19T14:19:00"
+            }
+          ],
+          "unread": true
+        },
+        {
+          "id": "D_f19605ce",
+          "with": "p_005",
+          "with_name": "Jennifer Rocha",
+          "messages": [
+            {
+              "id": "msg_fec4a4d350",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "you free now?",
+              "timestamp": "2026-04-17T23:00:00"
+            },
+            {
+              "id": "msg_ebb8173646",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "ack'd, will handle",
+              "timestamp": "2026-04-18T00:55:00"
+            },
+            {
+              "id": "msg_c03cdff6c2",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "you free now?",
+              "timestamp": "2026-04-18T04:30:00"
+            },
+            {
+              "id": "msg_a551d97576",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-18T05:19:00"
+            },
+            {
+              "id": "msg_b088a54a3f",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "heads up, Elizabeth asked me about onboarding",
+              "timestamp": "2026-04-18T08:18:00"
+            },
+            {
+              "id": "msg_782d557448",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "fyi Atlas slipped to next sprint",
+              "timestamp": "2026-04-18T11:02:00"
+            },
+            {
+              "id": "msg_d98914d548",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "sent you a doc, let me know",
+              "timestamp": "2026-04-18T13:36:00"
+            },
+            {
+              "id": "msg_07e1d821ec",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "i disagree with the direction on pricing-redesign, let's discuss",
+              "timestamp": "2026-04-18T16:05:00"
+            },
+            {
+              "id": "msg_12ef904841",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "can we talk about mobile-v2?",
+              "timestamp": "2026-04-18T19:24:00"
+            },
+            {
+              "id": "msg_ffc7ac4b9d",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "fyi Atlas slipped to next sprint",
+              "timestamp": "2026-04-18T19:40:00"
+            },
+            {
+              "id": "msg_34d15b91a3",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-18T20:51:00"
+            },
+            {
+              "id": "msg_c30105fae3",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "ack'd, will handle",
+              "timestamp": "2026-04-18T21:59:00"
+            },
+            {
+              "id": "msg_505b8171ac",
+              "user": "p_005",
+              "user_name": "Jennifer Rocha",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-18T23:51:00"
+            }
+          ],
+          "unread": true
+        },
+        {
+          "id": "D_4df4b8ef",
+          "with": "p_002",
+          "with_name": "Ryan Munoz",
+          "messages": [
+            {
+              "id": "msg_50d0321ec6",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "you free now?",
+              "timestamp": "2026-04-18T10:00:00"
+            },
+            {
+              "id": "msg_36d9d5d147",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-18T12:42:00"
+            },
+            {
+              "id": "msg_5b0bc9a981",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "re: Phoenix \u2014 want to chat?",
+              "timestamp": "2026-04-18T14:42:00"
+            },
+            {
+              "id": "msg_bf3d0bfc34",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "you free now?",
+              "timestamp": "2026-04-18T17:02:00"
+            },
+            {
+              "id": "msg_f81d4d7556",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "got a sec?",
+              "timestamp": "2026-04-18T20:14:00"
+            },
+            {
+              "id": "msg_51649836e6",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "not urgent but when you have time",
+              "timestamp": "2026-04-18T22:39:00"
+            },
+            {
+              "id": "msg_9c30f47cd5",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "can i steal you for 10 min?",
+              "timestamp": "2026-04-19T01:10:00"
+            },
+            {
+              "id": "msg_54a11ec6c1",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "got a sec?",
+              "timestamp": "2026-04-19T02:37:00"
+            },
+            {
+              "id": "msg_630e925aba",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "ack'd, will handle",
+              "timestamp": "2026-04-19T04:30:00"
+            },
+            {
+              "id": "msg_af403bfbf0",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "fyi mobile-v2 slipped to next sprint",
+              "timestamp": "2026-04-19T07:33:00"
+            },
+            {
+              "id": "msg_14df0b3b57",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "heads up, Jennifer asked me about onboarding",
+              "timestamp": "2026-04-19T09:09:00"
+            },
+            {
+              "id": "msg_fd7d5464c8",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "sent you a doc, let me know",
+              "timestamp": "2026-04-19T10:41:00"
+            },
+            {
+              "id": "msg_3e449b2081",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "can we talk about pricing-redesign?",
+              "timestamp": "2026-04-19T12:29:00"
+            },
+            {
+              "id": "msg_0568fce9e8",
+              "user": "user_000",
+              "user_name": "Donald Walker",
+              "text": "not urgent but when you have time",
+              "timestamp": "2026-04-19T13:18:00"
+            },
+            {
+              "id": "msg_645cbc711a",
+              "user": "p_002",
+              "user_name": "Ryan Munoz",
+              "text": "ack'd, will handle",
+              "timestamp": "2026-04-19T13:19:00"
+            }
+          ],
+          "unread": false
+        }
+      ],
+      "mentions": [
+        {
+          "channel": "random",
+          "message_id": "msg_67a505bb09",
+          "from": "Sandra Parker",
+          "text": "<@@donaldw> welcome Danielle \ud83d\udc4b",
+          "timestamp": "2026-04-18T19:35:00"
+        },
+        {
+          "channel": "product",
+          "message_id": "msg_6f8cf97c03",
+          "from": "Donald Walker",
+          "text": "<@@donaldw> rolling back mobile-v2 change",
+          "timestamp": "2026-04-18T18:19:00"
+        },
+        {
+          "channel": "design",
+          "message_id": "msg_ac8fa69da4",
+          "from": "Brenda Snyder PhD",
+          "text": "<@@donaldw> on-call this week is Sandra",
+          "timestamp": "2026-04-17T01:57:00"
+        },
+        {
+          "channel": "leadership",
+          "message_id": "msg_aa8c80a7b6",
+          "from": "Elizabeth Fowler",
+          "text": "<@@donaldw> heads up \u2014 calendar invite coming",
+          "timestamp": "2026-04-16T20:05:00"
+        },
+        {
+          "channel": "engineering",
+          "message_id": "msg_369d156c6e",
+          "from": "Elizabeth Fowler",
+          "text": "<@@donaldw> heads up \u2014 calendar invite coming",
+          "timestamp": "2026-04-16T11:55:00"
+        },
+        {
+          "channel": "random",
+          "message_id": "msg_411699febb",
+          "from": "Meredith Barnes",
+          "text": "<@@donaldw> anyone seeing the 503s?",
+          "timestamp": "2026-04-15T22:47:00"
+        },
+        {
+          "channel": "design",
+          "message_id": "msg_4779f5a6da",
+          "from": "Donald Walker",
+          "text": "<@@donaldw> PR ready for review: https://docs/38ab3a5d",
+          "timestamp": "2026-04-15T18:04:00"
+        },
+        {
+          "channel": "random",
+          "message_id": "msg_347775d02d",
+          "from": "Donald Walker",
+          "text": "<@@donaldw> on-call this week is Meredith",
+          "timestamp": "2026-04-15T15:56:00"
+        },
+        {
+          "channel": "leadership",
+          "message_id": "msg_e651dc3347",
+          "from": "Brenda Snyder PhD",
+          "text": "<@@donaldw> lunch at 12:30?",
+          "timestamp": "2026-04-15T10:08:00"
+        }
+      ],
+      "summary": {
+        "total_channels": 8,
+        "total_dms": 5,
+        "total_mentions": 9,
+        "difficulty": "medium"
+      }
+    },
+    "calendar": {
+      "user": "donald.walker@purposebrother.com",
+      "timezone": "America/Los_Angeles",
+      "working_hours": [
+        9,
+        17
+      ],
+      "events": [
+        {
+          "id": "evt_ed0fde8c48",
+          "title": "All-hands",
+          "start": "2026-04-20T09:00:00",
+          "end": "2026-04-20T10:00:00",
+          "attendees": [
+            "elizabeth.fowler@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": true,
+          "location": "Conference Room B",
+          "description": "Agenda in the invite.",
+          "accepted": true
+        },
+        {
+          "id": "evt_ca5a0af487",
+          "title": "Focus time",
+          "start": "2026-04-20T16:30:00",
+          "end": "2026-04-20T18:30:00",
+          "attendees": [
+            "ryan.munoz@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "carmen.rose@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Zoom",
+          "description": "Deep work block \u2014 no meetings please.",
+          "accepted": true
+        },
+        {
+          "id": "evt_b7d50938f3",
+          "title": "Focus time",
+          "start": "2026-04-20T18:45:00",
+          "end": "2026-04-20T20:45:00",
+          "attendees": [
+            "ryan.munoz@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "amber.perez@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Zoom",
+          "description": "Deep work block \u2014 no meetings please.",
+          "accepted": false
+        },
+        {
+          "id": "evt_8900105ad4",
+          "title": "Interview: Jennifer",
+          "start": "2026-04-21T15:00:00",
+          "end": "2026-04-21T16:00:00",
+          "attendees": [
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Zoom",
+          "description": "Candidate interview. See attached resume and rubric.",
+          "accepted": true
+        },
+        {
+          "id": "evt_7d59eeea68",
+          "title": "Interview: Brenda",
+          "start": "2026-04-21T15:30:00",
+          "end": "2026-04-21T16:30:00",
+          "attendees": [
+            "elizabeth.fowler@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "carmen.rose@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Conference Room A",
+          "description": "Candidate interview. See attached resume and rubric.",
+          "accepted": false
+        },
+        {
+          "id": "evt_6689d3c5d3",
+          "title": "Atlas standup",
+          "start": "2026-04-22T11:30:00",
+          "end": "2026-04-22T11:45:00",
+          "attendees": [
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": true,
+          "location": "Cafe",
+          "description": "Daily standup. 3 questions: yesterday / today / blockers.",
+          "accepted": true
+        },
+        {
+          "id": "evt_208d48cd40",
+          "title": "Customer call: Alex",
+          "start": "2026-04-22T15:00:00",
+          "end": "2026-04-22T15:30:00",
+          "attendees": [
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Conference Room A",
+          "description": "See shared doc.",
+          "accepted": true
+        },
+        {
+          "id": "evt_022a4bc2f9",
+          "title": "Mobile launch kickoff",
+          "start": "2026-04-22T16:00:00",
+          "end": "2026-04-22T17:00:00",
+          "attendees": [
+            "ryan.munoz@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "alex.spencer@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Zoom",
+          "description": "Agenda in the invite.",
+          "accepted": true
+        },
+        {
+          "id": "evt_50c5079721",
+          "title": "1:1 with Shannon",
+          "start": "2026-04-23T08:30:00",
+          "end": "2026-04-23T09:00:00",
+          "attendees": [
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com"
+          ],
+          "organizer": "shannon.smith@purposebrother.com",
+          "recurring": false,
+          "location": "Conference Room A",
+          "description": "Regular 1:1 \u2014 bring anything on your mind.",
+          "accepted": true
+        },
+        {
+          "id": "evt_b984a40bc1",
+          "title": "Atlas review",
+          "start": "2026-04-23T10:00:00",
+          "end": "2026-04-23T10:45:00",
+          "attendees": [
+            "elizabeth.fowler@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Zoom",
+          "description": "Review progress, surface blockers, agree on next steps.",
+          "accepted": true
+        },
+        {
+          "id": "evt_c49a35bcc1",
+          "title": "Design critique",
+          "start": "2026-04-23T11:00:00",
+          "end": "2026-04-23T11:45:00",
+          "attendees": [
+            "elizabeth.fowler@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": true,
+          "location": "Meet",
+          "description": "Agenda in the invite.",
+          "accepted": true
+        },
+        {
+          "id": "evt_1df2f8915a",
+          "title": "Focus time",
+          "start": "2026-04-24T09:30:00",
+          "end": "2026-04-24T11:30:00",
+          "attendees": [
+            "sandra.parker@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Conference Room B",
+          "description": "Deep work block \u2014 no meetings please.",
+          "accepted": true
+        },
+        {
+          "id": "evt_f0784f1c6b",
+          "title": "Customer call: Meredith",
+          "start": "2026-04-24T11:30:00",
+          "end": "2026-04-24T12:00:00",
+          "attendees": [
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Conference Room B",
+          "description": "See shared doc.",
+          "accepted": true
+        },
+        {
+          "id": "evt_1e67e612bc",
+          "title": "Offsite prep",
+          "start": "2026-04-24T15:00:00",
+          "end": "2026-04-24T16:00:00",
+          "attendees": [
+            "elizabeth.fowler@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "danielle.ford@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": false,
+          "location": "Zoom",
+          "description": "Agenda in the invite.",
+          "accepted": true
+        },
+        {
+          "id": "evt_d0b23db840",
+          "title": "Design critique",
+          "start": "2026-04-24T16:15:00",
+          "end": "2026-04-24T17:00:00",
+          "attendees": [
+            "carmen.rose@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "organizer": "donald.walker@purposebrother.com",
+          "recurring": true,
+          "location": "Conference Room B",
+          "description": "Agenda in the invite.",
+          "accepted": false
+        }
+      ],
+      "conflicts": [
+        {
+          "event_a": "evt_8900105ad4",
+          "event_b": "evt_7d59eeea68"
+        }
+      ],
+      "summary": {
+        "total_events": 15,
+        "conflict_count": 1,
+        "days_covered": 7,
+        "difficulty": "medium"
+      }
+    },
+    "drive": {
+      "user": "donald.walker@purposebrother.com",
+      "folders": [
+        {
+          "id": "f_8e687318",
+          "name": "My Drive",
+          "parent_id": null,
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": []
+        },
+        {
+          "id": "f_0b156af9",
+          "name": "Team Shared",
+          "parent_id": null,
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "meredith.barnes@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "alex.spencer@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_48b5cda8",
+          "name": "Atlas",
+          "parent_id": "f_0b156af9",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_992e0454",
+          "name": "Phoenix",
+          "parent_id": "f_0b156af9",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "carmen.rose@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "sandra.parker@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_6eb6cd82",
+          "name": "Pricing",
+          "parent_id": "f_0b156af9",
+          "owner": "brenda.phd@purposebrother.com",
+          "shared_with": [
+            "jennifer.rocha@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_50c2230d",
+          "name": "Onboarding",
+          "parent_id": "f_0b156af9",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_0eaa02f0",
+          "name": "Mobile",
+          "parent_id": "f_0b156af9",
+          "owner": "sandra.parker@purposebrother.com",
+          "shared_with": [
+            "shannon.smith@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_77c4bc35",
+          "name": "Platform",
+          "parent_id": "f_0b156af9",
+          "owner": "sandra.parker@purposebrother.com",
+          "shared_with": [
+            "sandra.parker@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_ebd34ba0",
+          "name": "Growth",
+          "parent_id": "f_0b156af9",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_97bc4f4c",
+          "name": "Engineering",
+          "parent_id": "f_0b156af9",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_5850b09e",
+          "name": "Product",
+          "parent_id": "f_0b156af9",
+          "owner": "brenda.phd@purposebrother.com",
+          "shared_with": [
+            "brenda.phd@purposebrother.com"
+          ]
+        },
+        {
+          "id": "f_84c5fd58",
+          "name": "Design",
+          "parent_id": "f_0b156af9",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "ryan.munoz@purposebrother.com"
+          ]
+        }
+      ],
+      "files": [
+        {
+          "id": "file_planted_5861f0cb",
+          "name": "Onboarding \u2014 Welcome & First Week",
+          "type": "doc",
+          "parent_id": "f_0b156af9",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com"
+          ],
+          "created": "2026-04-15T09:00:00",
+          "modified": "2026-04-18T16:30:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 42,
+          "starred": false,
+          "comments": 3
+        },
+        {
+          "id": "file_e186c5d9d8",
+          "name": "Hiring pipeline",
+          "type": "sheet",
+          "parent_id": "f_992e0454",
+          "owner": "jennifer.rocha@purposebrother.com",
+          "shared_with": [
+            "sandra.parker@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com"
+          ],
+          "created": "2025-11-01T11:00:00",
+          "modified": "2025-11-03T11:00:00",
+          "modified_by": "amber.perez@purposebrother.com",
+          "size_kb": 1927,
+          "starred": false,
+          "comments": 12
+        },
+        {
+          "id": "file_805a84fd57",
+          "name": "Customer feedback \u2014 Platform",
+          "type": "doc",
+          "parent_id": "f_77c4bc35",
+          "owner": "jennifer.rocha@purposebrother.com",
+          "shared_with": [
+            "carmen.rose@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "created": "2026-01-24T22:00:00",
+          "modified": "2026-01-29T22:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 340,
+          "starred": false,
+          "comments": 3
+        },
+        {
+          "id": "file_bc8b1f1f98",
+          "name": "Brand guidelines",
+          "type": "doc",
+          "parent_id": "f_ebd34ba0",
+          "owner": "sandra.parker@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "amber.perez@purposebrother.com"
+          ],
+          "created": "2026-01-23T22:00:00",
+          "modified": "2026-02-08T22:00:00",
+          "modified_by": "danielle.ford@purposebrother.com",
+          "size_kb": 2411,
+          "starred": false,
+          "comments": 10
+        },
+        {
+          "id": "file_90cfa8b948",
+          "name": "Brand guidelines",
+          "type": "doc",
+          "parent_id": "f_6eb6cd82",
+          "owner": "sandra.parker@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "created": "2025-11-02T10:00:00",
+          "modified": "2025-11-30T10:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 1190,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_6c1b25128f",
+          "name": "Atlas \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_8e687318",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "sandra.parker@purposebrother.com"
+          ],
+          "created": "2025-11-11T07:00:00",
+          "modified": "2025-12-01T07:00:00",
+          "modified_by": "jennifer.rocha@purposebrother.com",
+          "size_kb": 123,
+          "starred": false,
+          "comments": 1
+        },
+        {
+          "id": "file_c157ba3ec8",
+          "name": "Hiring pipeline",
+          "type": "sheet",
+          "parent_id": "f_0eaa02f0",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "meredith.barnes@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "created": "2026-01-25T01:00:00",
+          "modified": "2026-02-19T01:00:00",
+          "modified_by": "danielle.ford@purposebrother.com",
+          "size_kb": 2721,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_48afb68dfa",
+          "name": "Onboarding \u2014 Roadmap",
+          "type": "doc",
+          "parent_id": "f_50c2230d",
+          "owner": "carmen.rose@purposebrother.com",
+          "shared_with": [
+            "shannon.smith@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com"
+          ],
+          "created": "2025-12-02T05:00:00",
+          "modified": "2025-12-30T05:00:00",
+          "modified_by": "alex.spencer@purposebrother.com",
+          "size_kb": 4646,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_84518452e8",
+          "name": "Interview rubric \u2014 Phoenix",
+          "type": "doc",
+          "parent_id": "f_992e0454",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "carmen.rose@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "alex.spencer@purposebrother.com"
+          ],
+          "created": "2025-12-03T09:00:00",
+          "modified": "2025-12-08T09:00:00",
+          "modified_by": "sandra.parker@purposebrother.com",
+          "size_kb": 1685,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_8f2e904a54",
+          "name": "Interview rubric \u2014 Growth",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "brenda.phd@purposebrother.com",
+          "shared_with": [
+            "jennifer.rocha@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "ryan.munoz@purposebrother.com"
+          ],
+          "created": "2026-01-18T14:00:00",
+          "modified": "2026-01-19T14:00:00",
+          "modified_by": "amber.perez@purposebrother.com",
+          "size_kb": 3874,
+          "starred": false,
+          "comments": 2
+        },
+        {
+          "id": "file_523a6655bf",
+          "name": "Pricing \u2014 Budget",
+          "type": "sheet",
+          "parent_id": "f_8e687318",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "ryan.munoz@purposebrother.com",
+            "alex.spencer@purposebrother.com"
+          ],
+          "created": "2026-02-20T23:00:00",
+          "modified": "2026-02-24T23:00:00",
+          "modified_by": "donald.walker@purposebrother.com",
+          "size_kb": 1949,
+          "starred": false,
+          "comments": 12
+        },
+        {
+          "id": "file_ecd0bfbc13",
+          "name": "Architecture: Platform",
+          "type": "doc",
+          "parent_id": "f_77c4bc35",
+          "owner": "ryan.munoz@purposebrother.com",
+          "shared_with": [
+            "carmen.rose@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "created": "2026-02-10T21:00:00",
+          "modified": "2026-02-16T21:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 668,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_bd44d49693",
+          "name": "Atlas \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_8e687318",
+          "owner": "jennifer.rocha@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com"
+          ],
+          "created": "2026-03-09T00:00:00",
+          "modified": "2026-03-18T00:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 165,
+          "starred": true,
+          "comments": 0
+        },
+        {
+          "id": "file_fc6251087b",
+          "name": "Pricing \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_6eb6cd82",
+          "owner": "sandra.parker@purposebrother.com",
+          "shared_with": [
+            "brenda.phd@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com"
+          ],
+          "created": "2026-03-30T22:00:00",
+          "modified": "2026-04-08T22:00:00",
+          "modified_by": "donald.walker@purposebrother.com",
+          "size_kb": 862,
+          "starred": false,
+          "comments": 1
+        },
+        {
+          "id": "file_a1108207b4",
+          "name": "Pricing \u2014 Metrics",
+          "type": "sheet",
+          "parent_id": "f_6eb6cd82",
+          "owner": "danielle.ford@purposebrother.com",
+          "shared_with": [
+            "alex.spencer@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com"
+          ],
+          "created": "2025-10-25T06:00:00",
+          "modified": "2025-11-22T06:00:00",
+          "modified_by": "carmen.rose@purposebrother.com",
+          "size_kb": 3550,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_2c3b2bbe88",
+          "name": "Mobile \u2014 Metrics",
+          "type": "sheet",
+          "parent_id": "f_0eaa02f0",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "amber.perez@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "danielle.ford@purposebrother.com"
+          ],
+          "created": "2026-02-08T00:00:00",
+          "modified": "2026-03-03T00:00:00",
+          "modified_by": "alex.spencer@purposebrother.com",
+          "size_kb": 3333,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_a365acdfe9",
+          "name": "Pricing \u2014 Budget",
+          "type": "sheet",
+          "parent_id": "f_8e687318",
+          "owner": "elizabeth.fowler@purposebrother.com",
+          "shared_with": [
+            "brenda.phd@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "ryan.munoz@purposebrother.com"
+          ],
+          "created": "2026-02-12T16:00:00",
+          "modified": "2026-02-14T16:00:00",
+          "modified_by": "alex.spencer@purposebrother.com",
+          "size_kb": 3499,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_3816182947",
+          "name": "Org chart",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "elizabeth.fowler@purposebrother.com",
+          "shared_with": [
+            "sandra.parker@purposebrother.com"
+          ],
+          "created": "2025-12-04T23:00:00",
+          "modified": "2025-12-24T23:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 876,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_b3c1e6eb70",
+          "name": "Mobile \u2014 Notes Feb 22",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "shannon.smith@purposebrother.com",
+          "shared_with": [
+            "sandra.parker@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "created": "2026-02-03T14:00:00",
+          "modified": "2026-02-20T14:00:00",
+          "modified_by": "shannon.smith@purposebrother.com",
+          "size_kb": 1440,
+          "starred": false,
+          "comments": 11
+        },
+        {
+          "id": "file_7faeb3df75",
+          "name": "Growth \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_ebd34ba0",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com"
+          ],
+          "created": "2025-11-17T19:00:00",
+          "modified": "2025-12-10T19:00:00",
+          "modified_by": "jennifer.rocha@purposebrother.com",
+          "size_kb": 3247,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_095d3285ea",
+          "name": "Q3 OKRs",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "ryan.munoz@purposebrother.com",
+          "shared_with": [
+            "danielle.ford@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com"
+          ],
+          "created": "2026-01-22T06:00:00",
+          "modified": "2026-02-16T06:00:00",
+          "modified_by": "ryan.munoz@purposebrother.com",
+          "size_kb": 4091,
+          "starred": false,
+          "comments": 15
+        },
+        {
+          "id": "file_8cb25144c0",
+          "name": "Mobile \u2014 PRD",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "meredith.barnes@purposebrother.com",
+          "shared_with": [
+            "amber.perez@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "ryan.munoz@purposebrother.com"
+          ],
+          "created": "2026-02-16T19:00:00",
+          "modified": "2026-03-04T19:00:00",
+          "modified_by": "sandra.parker@purposebrother.com",
+          "size_kb": 319,
+          "starred": false,
+          "comments": 15
+        },
+        {
+          "id": "file_da71804ec6",
+          "name": "Interview rubric \u2014 Pricing",
+          "type": "doc",
+          "parent_id": "f_6eb6cd82",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "brenda.phd@purposebrother.com"
+          ],
+          "created": "2026-03-18T21:00:00",
+          "modified": "2026-03-22T21:00:00",
+          "modified_by": "jennifer.rocha@purposebrother.com",
+          "size_kb": 2268,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_cf416951d5",
+          "name": "Architecture: Platform",
+          "type": "doc",
+          "parent_id": "f_77c4bc35",
+          "owner": "jennifer.rocha@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "amber.perez@purposebrother.com"
+          ],
+          "created": "2025-12-14T06:00:00",
+          "modified": "2025-12-22T06:00:00",
+          "modified_by": "shannon.smith@purposebrother.com",
+          "size_kb": 4507,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_7a12735ff2",
+          "name": "Architecture: Onboarding",
+          "type": "doc",
+          "parent_id": "f_50c2230d",
+          "owner": "ryan.munoz@purposebrother.com",
+          "shared_with": [
+            "danielle.ford@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "alex.spencer@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "created": "2026-02-27T13:00:00",
+          "modified": "2026-03-18T13:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 1340,
+          "starred": true,
+          "comments": 0
+        },
+        {
+          "id": "file_be6d1f44fd",
+          "name": "Interview rubric \u2014 Mobile",
+          "type": "doc",
+          "parent_id": "f_0eaa02f0",
+          "owner": "alex.spencer@purposebrother.com",
+          "shared_with": [
+            "alex.spencer@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "created": "2025-11-07T00:00:00",
+          "modified": "2025-11-15T00:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 1864,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_c9aeaeae16",
+          "name": "Growth \u2014 Review",
+          "type": "slides",
+          "parent_id": "f_8e687318",
+          "owner": "shannon.smith@purposebrother.com",
+          "shared_with": [
+            "shannon.smith@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "sandra.parker@purposebrother.com"
+          ],
+          "created": "2026-02-19T10:00:00",
+          "modified": "2026-02-24T10:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 1031,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_87f56c4336",
+          "name": "Weekly notes \u2014 Apr 17",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "jennifer.rocha@purposebrother.com"
+          ],
+          "created": "2025-10-08T21:00:00",
+          "modified": "2025-11-04T21:00:00",
+          "modified_by": "alex.spencer@purposebrother.com",
+          "size_kb": 1444,
+          "starred": false,
+          "comments": 12
+        },
+        {
+          "id": "file_29ee31bfed",
+          "name": "Interview rubric \u2014 Pricing",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "alex.spencer@purposebrother.com",
+          "shared_with": [
+            "meredith.barnes@purposebrother.com",
+            "sandra.parker@purposebrother.com"
+          ],
+          "created": "2025-12-29T05:00:00",
+          "modified": "2026-01-03T05:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 3426,
+          "starred": false,
+          "comments": 2
+        },
+        {
+          "id": "file_3d8578d298",
+          "name": "Q4 OKRs",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "carmen.rose@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "created": "2026-02-04T07:00:00",
+          "modified": "2026-02-25T07:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 2673,
+          "starred": false,
+          "comments": 6
+        },
+        {
+          "id": "file_bcc5c8f926",
+          "name": "Pricing \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_8e687318",
+          "owner": "elizabeth.fowler@purposebrother.com",
+          "shared_with": [
+            "elizabeth.fowler@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "sandra.parker@purposebrother.com"
+          ],
+          "created": "2025-10-08T04:00:00",
+          "modified": "2025-11-04T04:00:00",
+          "modified_by": "ryan.munoz@purposebrother.com",
+          "size_kb": 2641,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_438822c41a",
+          "name": "Hiring pipeline",
+          "type": "sheet",
+          "parent_id": "f_48b5cda8",
+          "owner": "elizabeth.fowler@purposebrother.com",
+          "shared_with": [
+            "ryan.munoz@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "shannon.smith@purposebrother.com",
+            "amber.perez@purposebrother.com"
+          ],
+          "created": "2025-12-07T02:00:00",
+          "modified": "2025-12-23T02:00:00",
+          "modified_by": "carmen.rose@purposebrother.com",
+          "size_kb": 1041,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_9786f9f667",
+          "name": "Pricing \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_6eb6cd82",
+          "owner": "jennifer.rocha@purposebrother.com",
+          "shared_with": [
+            "sandra.parker@purposebrother.com"
+          ],
+          "created": "2025-09-30T22:00:00",
+          "modified": "2025-10-25T22:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 4798,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_72072ff41f",
+          "name": "Brand guidelines",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "jennifer.rocha@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "carmen.rose@purposebrother.com",
+            "brenda.phd@purposebrother.com"
+          ],
+          "created": "2026-02-11T00:00:00",
+          "modified": "2026-02-17T00:00:00",
+          "modified_by": "carmen.rose@purposebrother.com",
+          "size_kb": 1493,
+          "starred": false,
+          "comments": 4
+        },
+        {
+          "id": "file_f3f5c8207f",
+          "name": "Weekly notes \u2014 Feb 27",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "danielle.ford@purposebrother.com",
+          "shared_with": [
+            "brenda.phd@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "donald.walker@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "created": "2025-12-12T07:00:00",
+          "modified": "2025-12-26T07:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 1579,
+          "starred": false,
+          "comments": 9
+        },
+        {
+          "id": "file_a1a89cc5d9",
+          "name": "Pricing \u2014 Launch deck",
+          "type": "slides",
+          "parent_id": "f_6eb6cd82",
+          "owner": "danielle.ford@purposebrother.com",
+          "shared_with": [
+            "ryan.munoz@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "jennifer.rocha@purposebrother.com",
+            "donald.walker@purposebrother.com"
+          ],
+          "created": "2025-12-30T06:00:00",
+          "modified": "2026-01-10T06:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 4645,
+          "starred": false,
+          "comments": 1
+        },
+        {
+          "id": "file_abd7ef0002",
+          "name": "Hiring pipeline",
+          "type": "sheet",
+          "parent_id": "f_992e0454",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "amber.perez@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "danielle.ford@purposebrother.com",
+            "meredith.barnes@purposebrother.com"
+          ],
+          "created": "2025-11-27T07:00:00",
+          "modified": "2025-11-30T07:00:00",
+          "modified_by": "brenda.phd@purposebrother.com",
+          "size_kb": 243,
+          "starred": false,
+          "comments": 12
+        },
+        {
+          "id": "file_e75bab81eb",
+          "name": "Customer feedback \u2014 Growth",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "amber.perez@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com",
+            "ryan.munoz@purposebrother.com",
+            "meredith.barnes@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "amber.perez@purposebrother.com",
+            "shannon.smith@purposebrother.com"
+          ],
+          "created": "2026-01-22T02:00:00",
+          "modified": "2026-02-20T02:00:00",
+          "modified_by": "ryan.munoz@purposebrother.com",
+          "size_kb": 157,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_12fcc6da8f",
+          "name": "Postmortem: Pricing",
+          "type": "doc",
+          "parent_id": "f_8e687318",
+          "owner": "donald.walker@purposebrother.com",
+          "shared_with": [
+            "donald.walker@purposebrother.com",
+            "shannon.smith@purposebrother.com"
+          ],
+          "created": "2026-01-04T11:00:00",
+          "modified": "2026-01-26T11:00:00",
+          "modified_by": "meredith.barnes@purposebrother.com",
+          "size_kb": 3684,
+          "starred": true,
+          "comments": 0
+        },
+        {
+          "id": "file_b1e1464680",
+          "name": "Hiring pipeline",
+          "type": "sheet",
+          "parent_id": "f_48b5cda8",
+          "owner": "danielle.ford@purposebrother.com",
+          "shared_with": [
+            "danielle.ford@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "sandra.parker@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "carmen.rose@purposebrother.com"
+          ],
+          "created": "2025-11-27T19:00:00",
+          "modified": "2025-12-19T19:00:00",
+          "modified_by": "alex.spencer@purposebrother.com",
+          "size_kb": 3849,
+          "starred": false,
+          "comments": 0
+        },
+        {
+          "id": "file_229fd82f5e",
+          "name": "Interview rubric \u2014 Atlas",
+          "type": "doc",
+          "parent_id": "f_48b5cda8",
+          "owner": "elizabeth.fowler@purposebrother.com",
+          "shared_with": [
+            "shannon.smith@purposebrother.com",
+            "brenda.phd@purposebrother.com",
+            "elizabeth.fowler@purposebrother.com",
+            "carmen.rose@purposebrother.com"
+          ],
+          "created": "2025-12-19T11:00:00",
+          "modified": "2026-01-02T11:00:00",
+          "modified_by": "alex.spencer@purposebrother.com",
+          "size_kb": 3819,
+          "starred": false,
+          "comments": 0
+        }
+      ],
+      "summary": {
+        "total_files": 40,
+        "total_folders": 12,
+        "owned_by_user": 7,
+        "difficulty": "medium"
+      }
+    },
+    "whatsapp": {
+      "user": "user",
+      "chats": [
+        {
+          "id": "chat_d3dd9025",
+          "type": "personal",
+          "name": "Best Friend",
+          "messages": [
+            {
+              "id": "wa_fe574d74cb",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-17T07:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_aca71c72ab",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "lol",
+              "timestamp": "2026-04-17T08:48:00",
+              "read": true
+            },
+            {
+              "id": "wa_48677059f6",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-17T09:15:00",
+              "read": true
+            },
+            {
+              "id": "wa_136a7469f5",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-17T11:19:00",
+              "read": true
+            },
+            {
+              "id": "wa_d46ee3fd27",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-17T12:40:00",
+              "read": true
+            },
+            {
+              "id": "wa_65239facec",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "thanks!!",
+              "timestamp": "2026-04-17T13:41:00",
+              "read": true
+            },
+            {
+              "id": "wa_69b7127278",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-17T15:35:00",
+              "read": true
+            },
+            {
+              "id": "wa_31d4fab224",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-17T17:11:00",
+              "read": true
+            },
+            {
+              "id": "wa_8a9d31a306",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "call me when you can",
+              "timestamp": "2026-04-17T19:45:00",
+              "read": true
+            },
+            {
+              "id": "wa_b400befeb4",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-17T20:36:00",
+              "read": false
+            },
+            {
+              "id": "wa_f5cf646606",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "running 10 min late",
+              "timestamp": "2026-04-17T20:46:00",
+              "read": true
+            },
+            {
+              "id": "wa_6b024d7055",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-17T22:19:00",
+              "read": true
+            },
+            {
+              "id": "wa_a558d3b3d3",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T00:38:00",
+              "read": true
+            },
+            {
+              "id": "wa_cb9b50ab04",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T03:25:00",
+              "read": false
+            },
+            {
+              "id": "wa_6f752114b1",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T06:24:00",
+              "read": true
+            },
+            {
+              "id": "wa_030c52a260",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-18T08:25:00",
+              "read": true
+            },
+            {
+              "id": "wa_19dff44018",
+              "from": "best_friend",
+              "from_name": "Best Friend",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-18T10:12:00",
+              "read": true
+            },
+            {
+              "id": "wa_f5e72e2c8a",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-18T11:26:00",
+              "read": false
+            }
+          ],
+          "unread": 0
+        },
+        {
+          "id": "chat_7f6ff6aa",
+          "type": "personal",
+          "name": "Dad",
+          "messages": [
+            {
+              "id": "wa_29fb957832",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "call me when you can",
+              "timestamp": "2026-04-17T23:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_7c8221a284",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "omw",
+              "timestamp": "2026-04-17T23:11:00",
+              "read": true
+            },
+            {
+              "id": "wa_c0bc6abed7",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-18T00:53:00",
+              "read": false
+            },
+            {
+              "id": "wa_845e3e07fb",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-18T03:06:00",
+              "read": true
+            },
+            {
+              "id": "wa_c522a8e27a",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "lol",
+              "timestamp": "2026-04-18T03:36:00",
+              "read": false
+            },
+            {
+              "id": "wa_bdde1dbaca",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "omw",
+              "timestamp": "2026-04-18T05:14:00",
+              "read": true
+            },
+            {
+              "id": "wa_3af7683231",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-18T07:49:00",
+              "read": true
+            },
+            {
+              "id": "wa_1e6cb7c6be",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-18T09:43:00",
+              "read": false
+            },
+            {
+              "id": "wa_ee53cecdf9",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "lol",
+              "timestamp": "2026-04-18T12:04:00",
+              "read": false
+            },
+            {
+              "id": "wa_442ce065dd",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "did you see this? [link]",
+              "timestamp": "2026-04-18T12:26:00",
+              "read": true
+            },
+            {
+              "id": "wa_28203a0c84",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "thanks!!",
+              "timestamp": "2026-04-18T15:06:00",
+              "read": true
+            },
+            {
+              "id": "wa_fc03bdc637",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "call me when you can",
+              "timestamp": "2026-04-18T16:58:00",
+              "read": false
+            },
+            {
+              "id": "wa_933da0eedd",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-18T17:07:00",
+              "read": true
+            },
+            {
+              "id": "wa_cc58379744",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-18T19:52:00",
+              "read": true
+            },
+            {
+              "id": "wa_3ae0645d3c",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-18T22:45:00",
+              "read": true
+            },
+            {
+              "id": "wa_904b648fb0",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-19T01:29:00",
+              "read": false
+            },
+            {
+              "id": "wa_e8fe545d00",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-19T01:35:00",
+              "read": true
+            },
+            {
+              "id": "wa_c5db027eb5",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-19T03:04:00",
+              "read": false
+            },
+            {
+              "id": "wa_a65d3b5a83",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "running 10 min late",
+              "timestamp": "2026-04-19T06:02:00",
+              "read": true
+            }
+          ],
+          "unread": 3
+        },
+        {
+          "id": "chat_0def8442",
+          "type": "personal",
+          "name": "Doctor's Office",
+          "messages": [
+            {
+              "id": "wa_0a8c901811",
+              "from": "doctor's_office",
+              "from_name": "Doctor's Office",
+              "text": "running 10 min late",
+              "timestamp": "2026-04-18T20:00:00",
+              "read": false
+            },
+            {
+              "id": "wa_3267c3db99",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "call me when you can",
+              "timestamp": "2026-04-18T22:26:00",
+              "read": true
+            },
+            {
+              "id": "wa_5e4c3bd0aa",
+              "from": "doctor's_office",
+              "from_name": "Doctor's Office",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-18T22:54:00",
+              "read": true
+            },
+            {
+              "id": "wa_e854bee657",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "did you see this? [link]",
+              "timestamp": "2026-04-19T01:42:00",
+              "read": true
+            },
+            {
+              "id": "wa_0fd80604bf",
+              "from": "doctor's_office",
+              "from_name": "Doctor's Office",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-19T03:17:00",
+              "read": true
+            },
+            {
+              "id": "wa_99338de1fc",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "running 10 min late",
+              "timestamp": "2026-04-19T03:53:00",
+              "read": false
+            }
+          ],
+          "unread": 1
+        },
+        {
+          "id": "chat_49ddf154",
+          "type": "personal",
+          "name": "Plumber",
+          "messages": [
+            {
+              "id": "wa_b703525a71",
+              "from": "plumber",
+              "from_name": "Plumber",
+              "text": "thanks!!",
+              "timestamp": "2026-04-16T17:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_fcba1da97c",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-16T19:26:00",
+              "read": true
+            },
+            {
+              "id": "wa_ae465d1b05",
+              "from": "plumber",
+              "from_name": "Plumber",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-16T20:11:00",
+              "read": true
+            },
+            {
+              "id": "wa_db443a522a",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "call me when you can",
+              "timestamp": "2026-04-16T22:31:00",
+              "read": true
+            },
+            {
+              "id": "wa_3b4d20b9cf",
+              "from": "plumber",
+              "from_name": "Plumber",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-16T22:43:00",
+              "read": true
+            },
+            {
+              "id": "wa_4c3f9c1b3c",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-16T22:59:00",
+              "read": true
+            },
+            {
+              "id": "wa_a89fb3ab37",
+              "from": "plumber",
+              "from_name": "Plumber",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-16T23:22:00",
+              "read": true
+            },
+            {
+              "id": "wa_95fa998d1a",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-17T01:43:00",
+              "read": true
+            }
+          ],
+          "unread": 0
+        },
+        {
+          "id": "chat_983c9788",
+          "type": "personal",
+          "name": "Dentist",
+          "messages": [
+            {
+              "id": "wa_3c0a93c621",
+              "from": "dentist",
+              "from_name": "Dentist",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-16T10:00:00",
+              "read": false
+            },
+            {
+              "id": "wa_9e3266e85a",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-16T12:39:00",
+              "read": false
+            },
+            {
+              "id": "wa_b64a98ca16",
+              "from": "dentist",
+              "from_name": "Dentist",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-16T13:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_edbaa6462f",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-16T15:23:00",
+              "read": false
+            },
+            {
+              "id": "wa_fd56de9343",
+              "from": "dentist",
+              "from_name": "Dentist",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-16T17:09:00",
+              "read": true
+            },
+            {
+              "id": "wa_6f402971c6",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-16T18:27:00",
+              "read": false
+            }
+          ],
+          "unread": 1
+        },
+        {
+          "id": "chat_a7223cbd",
+          "type": "personal",
+          "name": "Landlord",
+          "messages": [
+            {
+              "id": "wa_63b4e174bd",
+              "from": "landlord",
+              "from_name": "Landlord",
+              "text": "thanks!!",
+              "timestamp": "2026-04-19T00:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_aa73139127",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "lol",
+              "timestamp": "2026-04-19T01:59:00",
+              "read": false
+            },
+            {
+              "id": "wa_f1ca1f453c",
+              "from": "landlord",
+              "from_name": "Landlord",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-19T02:04:00",
+              "read": false
+            },
+            {
+              "id": "wa_b218842aa8",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-19T04:18:00",
+              "read": false
+            },
+            {
+              "id": "wa_d2008e52eb",
+              "from": "landlord",
+              "from_name": "Landlord",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-19T05:32:00",
+              "read": false
+            },
+            {
+              "id": "wa_c8151b8516",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "did you see this? [link]",
+              "timestamp": "2026-04-19T07:41:00",
+              "read": false
+            }
+          ],
+          "unread": 2
+        },
+        {
+          "id": "chat_d1946df3",
+          "type": "personal",
+          "name": "Taylor",
+          "messages": [
+            {
+              "id": "wa_c721e9d10a",
+              "from": "taylor",
+              "from_name": "Taylor",
+              "text": "omw",
+              "timestamp": "2026-04-18T11:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_76ce540f83",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "lol",
+              "timestamp": "2026-04-18T11:26:00",
+              "read": true
+            },
+            {
+              "id": "wa_e8ca63d837",
+              "from": "taylor",
+              "from_name": "Taylor",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-18T13:24:00",
+              "read": true
+            },
+            {
+              "id": "wa_ac6eaf4a4f",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-18T16:20:00",
+              "read": true
+            },
+            {
+              "id": "wa_dfe8c07e90",
+              "from": "taylor",
+              "from_name": "Taylor",
+              "text": "thanks!!",
+              "timestamp": "2026-04-18T16:27:00",
+              "read": true
+            },
+            {
+              "id": "wa_b142f59584",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-18T19:21:00",
+              "read": true
+            },
+            {
+              "id": "wa_6cbad0ba8e",
+              "from": "taylor",
+              "from_name": "Taylor",
+              "text": "thanks!!",
+              "timestamp": "2026-04-18T20:29:00",
+              "read": true
+            },
+            {
+              "id": "wa_30df22157e",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-18T20:47:00",
+              "read": false
+            },
+            {
+              "id": "wa_db8d6e6e4e",
+              "from": "taylor",
+              "from_name": "Taylor",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-18T23:01:00",
+              "read": true
+            },
+            {
+              "id": "wa_67460f9fda",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "thanks!!",
+              "timestamp": "2026-04-19T01:04:00",
+              "read": false
+            },
+            {
+              "id": "wa_9c7c65ae08",
+              "from": "taylor",
+              "from_name": "Taylor",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-19T02:37:00",
+              "read": true
+            },
+            {
+              "id": "wa_92d5ea3567",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-19T05:32:00",
+              "read": false
+            }
+          ],
+          "unread": 0
+        },
+        {
+          "id": "chat_7a5e0dce",
+          "type": "personal",
+          "name": "Partner",
+          "messages": [
+            {
+              "id": "wa_eee24bafcf",
+              "from": "partner",
+              "from_name": "Partner",
+              "text": "thanks!!",
+              "timestamp": "2026-04-18T19:00:00",
+              "read": false
+            },
+            {
+              "id": "wa_9fff618d62",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "call me when you can",
+              "timestamp": "2026-04-18T20:44:00",
+              "read": true
+            },
+            {
+              "id": "wa_4847e527ac",
+              "from": "partner",
+              "from_name": "Partner",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T22:17:00",
+              "read": true
+            },
+            {
+              "id": "wa_192d5fc35b",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T22:41:00",
+              "read": true
+            }
+          ],
+          "unread": 1
+        },
+        {
+          "id": "chat_f6db29ba",
+          "type": "group",
+          "name": "Book club",
+          "members": [
+            "mia",
+            "chris",
+            "pat",
+            "dev"
+          ],
+          "messages": [
+            {
+              "id": "wa_161a337fd7",
+              "from": "mia",
+              "from_name": "Mia",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-16T06:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_b06c9211fc",
+              "from": "pat",
+              "from_name": "Pat",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-16T07:44:00",
+              "read": true
+            },
+            {
+              "id": "wa_562273f27c",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-16T08:11:00",
+              "read": false
+            },
+            {
+              "id": "wa_49a64143dd",
+              "from": "pat",
+              "from_name": "Pat",
+              "text": "omw",
+              "timestamp": "2026-04-16T09:56:00",
+              "read": false
+            },
+            {
+              "id": "wa_37025211ce",
+              "from": "pat",
+              "from_name": "Pat",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-16T10:53:00",
+              "read": false
+            },
+            {
+              "id": "wa_b5f306b0c5",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "omw",
+              "timestamp": "2026-04-16T11:13:00",
+              "read": true
+            },
+            {
+              "id": "wa_997c223be0",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "thanks!!",
+              "timestamp": "2026-04-16T12:08:00",
+              "read": true
+            },
+            {
+              "id": "wa_ba5d588849",
+              "from": "pat",
+              "from_name": "Pat",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-16T13:53:00",
+              "read": true
+            },
+            {
+              "id": "wa_bffbb848e6",
+              "from": "chris",
+              "from_name": "Chris",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-16T14:09:00",
+              "read": true
+            },
+            {
+              "id": "wa_4a20d73f1b",
+              "from": "chris",
+              "from_name": "Chris",
+              "text": "thanks!!",
+              "timestamp": "2026-04-16T15:04:00",
+              "read": true
+            },
+            {
+              "id": "wa_341ee9d19d",
+              "from": "pat",
+              "from_name": "Pat",
+              "text": "thanks!!",
+              "timestamp": "2026-04-16T15:38:00",
+              "read": true
+            },
+            {
+              "id": "wa_86f0086528",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-16T16:56:00",
+              "read": false
+            },
+            {
+              "id": "wa_f4498960fc",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-16T18:13:00",
+              "read": true
+            },
+            {
+              "id": "wa_e7c99d7763",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-16T19:33:00",
+              "read": true
+            },
+            {
+              "id": "wa_009ebd525d",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-16T21:01:00",
+              "read": true
+            },
+            {
+              "id": "wa_4917a84119",
+              "from": "chris",
+              "from_name": "Chris",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-16T22:20:00",
+              "read": true
+            },
+            {
+              "id": "wa_d672a2a1c1",
+              "from": "mia",
+              "from_name": "Mia",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-16T23:13:00",
+              "read": true
+            },
+            {
+              "id": "wa_b3c9b21c47",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-17T01:13:00",
+              "read": true
+            },
+            {
+              "id": "wa_c6987f1387",
+              "from": "mia",
+              "from_name": "Mia",
+              "text": "thanks!!",
+              "timestamp": "2026-04-17T01:31:00",
+              "read": true
+            },
+            {
+              "id": "wa_d611c40ede",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-17T02:21:00",
+              "read": true
+            },
+            {
+              "id": "wa_2d6fa21361",
+              "from": "mia",
+              "from_name": "Mia",
+              "text": "thanks!!",
+              "timestamp": "2026-04-17T03:09:00",
+              "read": true
+            },
+            {
+              "id": "wa_78c20b3c2c",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-17T03:21:00",
+              "read": false
+            },
+            {
+              "id": "wa_4f1cd3309c",
+              "from": "mia",
+              "from_name": "Mia",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-17T04:32:00",
+              "read": false
+            },
+            {
+              "id": "wa_c9dcc65b52",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "omw",
+              "timestamp": "2026-04-17T06:28:00",
+              "read": true
+            },
+            {
+              "id": "wa_ead9209a92",
+              "from": "mia",
+              "from_name": "Mia",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-17T08:15:00",
+              "read": true
+            },
+            {
+              "id": "wa_6dcb7ed684",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-17T08:57:00",
+              "read": false
+            },
+            {
+              "id": "wa_05c14e8a2c",
+              "from": "dev",
+              "from_name": "Dev",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-17T09:38:00",
+              "read": true
+            }
+          ],
+          "unread": 7
+        },
+        {
+          "id": "chat_05473996",
+          "type": "group",
+          "name": "Family",
+          "members": [
+            "mom",
+            "dad",
+            "sister",
+            "brother"
+          ],
+          "messages": [
+            {
+              "id": "wa_c444167150",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-17T14:00:00",
+              "read": true
+            },
+            {
+              "id": "wa_a49c06a621",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-17T14:12:00",
+              "read": true
+            },
+            {
+              "id": "wa_bc501e4640",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-17T14:23:00",
+              "read": true
+            },
+            {
+              "id": "wa_6fc404767b",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-17T14:50:00",
+              "read": false
+            },
+            {
+              "id": "wa_74c4f6d006",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "thanks!!",
+              "timestamp": "2026-04-17T16:28:00",
+              "read": false
+            },
+            {
+              "id": "wa_378d3ed020",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-17T18:25:00",
+              "read": true
+            },
+            {
+              "id": "wa_853f47fdc0",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-17T18:48:00",
+              "read": true
+            },
+            {
+              "id": "wa_68e74a0407",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-17T20:07:00",
+              "read": true
+            },
+            {
+              "id": "wa_c2ccbafd75",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-17T20:59:00",
+              "read": false
+            },
+            {
+              "id": "wa_62d08e7892",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-17T22:10:00",
+              "read": false
+            },
+            {
+              "id": "wa_072ad34409",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "running 10 min late",
+              "timestamp": "2026-04-17T22:54:00",
+              "read": true
+            },
+            {
+              "id": "wa_05612aebb4",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "did you see this? [link]",
+              "timestamp": "2026-04-17T23:25:00",
+              "read": true
+            },
+            {
+              "id": "wa_1e550f21b5",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "did you see this? [link]",
+              "timestamp": "2026-04-17T23:47:00",
+              "read": true
+            },
+            {
+              "id": "wa_5969c49996",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T01:03:00",
+              "read": true
+            },
+            {
+              "id": "wa_bf0d4a271f",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "thanks!!",
+              "timestamp": "2026-04-18T01:57:00",
+              "read": false
+            },
+            {
+              "id": "wa_650f06bd9b",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-18T03:24:00",
+              "read": true
+            },
+            {
+              "id": "wa_b5e684f225",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-18T04:05:00",
+              "read": true
+            },
+            {
+              "id": "wa_db2883a06d",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "call me when you can",
+              "timestamp": "2026-04-18T05:17:00",
+              "read": false
+            },
+            {
+              "id": "wa_dbcc77250a",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-18T05:29:00",
+              "read": false
+            },
+            {
+              "id": "wa_7502e875de",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "thanks!!",
+              "timestamp": "2026-04-18T07:27:00",
+              "read": true
+            },
+            {
+              "id": "wa_be7b91833b",
+              "from": "sister",
+              "from_name": "Sister",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-18T09:04:00",
+              "read": true
+            },
+            {
+              "id": "wa_a3ec9fabdf",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "sent you the pic",
+              "timestamp": "2026-04-18T09:59:00",
+              "read": false
+            },
+            {
+              "id": "wa_24170a2b77",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "hey, you free tonight?",
+              "timestamp": "2026-04-18T11:33:00",
+              "read": true
+            },
+            {
+              "id": "wa_d6f2151e6b",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "ok sounds good",
+              "timestamp": "2026-04-18T12:15:00",
+              "read": false
+            },
+            {
+              "id": "wa_30c316d2ff",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "omw",
+              "timestamp": "2026-04-18T14:11:00",
+              "read": false
+            },
+            {
+              "id": "wa_52f7d4ca5e",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "mom called \u2014 she wants to chat",
+              "timestamp": "2026-04-18T14:27:00",
+              "read": true
+            },
+            {
+              "id": "wa_08a3630635",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "call me when you can",
+              "timestamp": "2026-04-18T16:02:00",
+              "read": false
+            },
+            {
+              "id": "wa_7daa3aab83",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "dinner at 8?",
+              "timestamp": "2026-04-18T17:39:00",
+              "read": false
+            },
+            {
+              "id": "wa_ce53a2959d",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-18T18:32:00",
+              "read": false
+            },
+            {
+              "id": "wa_f474bc5c38",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "\ud83d\ude43",
+              "timestamp": "2026-04-18T19:39:00",
+              "read": true
+            },
+            {
+              "id": "wa_58dc7e9888",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-18T21:39:00",
+              "read": false
+            },
+            {
+              "id": "wa_02cc584b09",
+              "from": "brother",
+              "from_name": "Brother",
+              "text": "call me when you can",
+              "timestamp": "2026-04-18T22:49:00",
+              "read": false
+            },
+            {
+              "id": "wa_655257b3ed",
+              "from": "dad",
+              "from_name": "Dad",
+              "text": "movie tonight?",
+              "timestamp": "2026-04-19T00:16:00",
+              "read": true
+            },
+            {
+              "id": "wa_ff0fc3c4b1",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-19T00:23:00",
+              "read": true
+            },
+            {
+              "id": "wa_e9a5d1b3b0",
+              "from": "mom",
+              "from_name": "Mom",
+              "text": "happy birthday! \ud83c\udf89",
+              "timestamp": "2026-04-19T01:43:00",
+              "read": true
+            },
+            {
+              "id": "wa_31d51d3881",
+              "from": "user",
+              "from_name": "Donald Walker",
+              "text": "can you grab milk?",
+              "timestamp": "2026-04-19T02:08:00",
+              "read": true
+            }
+          ],
+          "unread": 13
+        }
+      ],
+      "summary": {
+        "total_chats": 10,
+        "unread_messages": 28,
+        "difficulty": "medium"
+      }
+    }
+  }
+}

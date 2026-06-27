@@ -1,0 +1,54 @@
+id: secret-enumeration
+version: "0.1.0"
+title: Kubernetes Secrets enumeration from inside container
+goal: Reproduce an in-cluster API call to list Secrets from a running container
+safety: safe
+namespace: k8s-replay
+
+deploy:
+  manifests:
+    - manifests/rbac.yaml
+    - manifests/dummy-secret.yaml
+    - manifests/workload.yaml
+
+workload:
+  selector: scenario=secret-enumeration
+  pod_name: secret-enum-target
+  container: target
+
+trigger:
+  kind: kubectl-exec
+  command:
+    - sh
+    - -c
+    - >
+      TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token);
+      CA=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt;
+      curl -sS --cacert $CA --header "Authorization: Bearer $TOKEN"
+      https://kubernetes.default.svc/api/v1/namespaces/k8s-replay/secrets | head -20
+
+behavior:
+  description: Kubernetes API call to list secrets made from inside container
+  evidence:
+    - exec_succeeded: true
+    - api_call: /api/v1/namespaces/k8s-replay/secrets
+
+detection:
+  semantics:
+    - contact to Kubernetes API server from inside container
+  falco:
+    enabled: true
+    search_patterns:
+      - K8S API
+      - kubernetes.default
+      - api server
+    correlation:
+      namespace: k8s-replay
+      workload_selector: scenario=secret-enumeration
+
+timeouts:
+  ready_seconds: 90
+  detect_seconds: 20
+
+cleanup:
+  script: cleanup.sh

@@ -1,0 +1,50 @@
+id: curl-egress
+version: "0.1.0"
+title: Outbound HTTP request from container
+goal: Reproduce an unexpected outbound network connection from a running container
+safety: safe
+namespace: k8s-replay
+
+deploy:
+  manifests:
+    - manifests/workload.yaml
+
+workload:
+  selector: scenario=curl-egress
+  pod_name: curl-egress-target
+  container: target
+
+trigger:
+  kind: kubectl-exec
+  command:
+    - curl
+    - -sS
+    - --max-time
+    - "10"
+    - http://ifconfig.me
+
+behavior:
+  description: outbound HTTP request made from inside container
+  evidence:
+    - exec_succeeded: true
+    - network_request: http://ifconfig.me
+
+detection:
+  semantics:
+    - unexpected outbound network connection from container
+  falco:
+    enabled: true
+    search_patterns:
+      - outbound
+      - network
+      - connect
+    correlation:
+      namespace: k8s-replay
+      workload_selector: scenario=curl-egress
+
+timeouts:
+  ready_seconds: 60
+  detect_seconds: 20
+
+cleanup:
+  script: cleanup.sh

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Persona",
+  "type": "object",
+  "required": ["id", "name", "email", "role", "department"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "role": { "type": "string" },
+    "department": { "type": "string" },
+    "tone": { "type": "string" },
+    "working_hours": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "timezone": { "type": "string" },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "slack_handle": { "type": "string" },
+    "phone": { "type": "string" }
+  }
+}

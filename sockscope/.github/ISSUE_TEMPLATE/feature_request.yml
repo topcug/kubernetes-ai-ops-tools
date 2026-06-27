@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest a new capability
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        sockscope has a deliberately narrow v1 scope: **given a process, show its sockets and the first context needed for triage.** Before filing, please check the roadmap in the README and CONTRIBUTING.md.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve
+      description: Start with the user problem, not the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: How does this fit the scope
+      description: Does it belong in v1, v1.1, or v2? Or is it out of scope?

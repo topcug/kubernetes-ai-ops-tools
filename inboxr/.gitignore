@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Build artifacts
+dist/
+build/
+*.egg
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Runtime / generated output
+workspace/
+out/
+graphify/
+graphify-out/
+
+# Local / personal agent configs (not for distribution)
+.claude/
+CLAUDE.md
+
+# Secrets & credentials — NEVER commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+.secrets.baseline
+
+# Generated demo / eval artifacts
+demo.json
+result.json
+scenario.json
+report.html
+eval_report.html
+*.tmp.json
+
+# Large / generated scenario fixtures (keep the rest under examples/)
+examples/crisis-day.json

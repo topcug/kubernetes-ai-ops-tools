@@ -1,0 +1,42 @@
+version: 2
+
+project_name: sockscope
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: sockscope
+    main: ./
+    binary: sockscope
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+      - -X github.com/topcug/sockscope/pkg/version.Version={{.Version}}
+      - -X github.com/topcug/sockscope/pkg/version.Commit={{.Commit}}
+      - -X github.com/topcug/sockscope/pkg/version.Date={{.Date}}
+
+archives:
+  - formats: [tar.gz]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: "checksums.txt"
+
+release:
+  replace_existing_artifacts: true
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"

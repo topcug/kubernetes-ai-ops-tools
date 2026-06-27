@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install shellcheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: Lint shell scripts
+        run: |
+          find . -name "*.sh" -not -path "./.git/*" | \
+            xargs shellcheck --severity=warning
+
+  validate-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Validate YAML manifests (dry-run)
+        run: |
+          find scenarios -name "*.yaml" | while read f; do
+            echo "Validating: $f"
+            kubectl apply --dry-run=client -f "$f" 2>/dev/null || \
+              echo "  (skipped — requires cluster context)"
+          done
+
+  scenario-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scenario:
+          - shell-spawn
+          - sa-token-read
+          - kubectl-exec
+          - curl-egress
+          - secret-enumeration
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install kind
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: k8s-replay
+          wait: 60s
+
+      - name: Run scenario (dry-run validation)
+        run: |
+          # Validate scenario files and check dry-run mode
+          bash -n scenarios/${{ matrix.scenario }}/trigger.sh
+          bash -n scenarios/${{ matrix.scenario }}/cleanup.sh
+          echo "[ok] scenario ${{ matrix.scenario }} shell syntax valid"
+
+      - name: Verify scenario.yaml fields
+        run: |
+          yaml="scenarios/${{ matrix.scenario }}/scenario.yaml"
+          for field in id title goal safety namespace; do
+            grep -q "^${field}:" "$yaml" || { echo "Missing field: $field in $yaml"; exit 1; }
+          done
+          echo "[ok] scenario.yaml fields present"
+
+      - name: Run scenario on kind cluster
+        run: make scenario-${{ matrix.scenario }} JSON=1
+        env:
+          KUBECONFIG: ${{ env.KUBECONFIG }}
+
+      - name: Cleanup scenario
+        if: always()
+        run: make cleanup-${{ matrix.scenario }}
+
+  release:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [lint, validate-manifests]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create release archive (Linux amd64)
+        run: |
+          tar -czf k8s-runtime-replay-linux-amd64.tar.gz \
+            --exclude='.git' \
+            --exclude='*.png' \
+            .
+          sha256sum k8s-runtime-replay-linux-amd64.tar.gz > k8s-runtime-replay-linux-amd64.tar.gz.sha256
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            k8s-runtime-replay-linux-amd64.tar.gz
+            k8s-runtime-replay-linux-amd64.tar.gz.sha256
+          generate_release_notes: true

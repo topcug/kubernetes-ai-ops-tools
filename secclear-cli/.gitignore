@@ -1,0 +1,42 @@
+# Binaries
+secclear
+secclear-linux-*
+secclear-darwin-*
+secclear-windows-*
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binaries
+*.test
+*.out
+
+# Go workspace
+vendor/
+go.work
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated reports
+secclear-*.md
+secclear-*.html
+secclear-*.json
+
+# Keep example reports
+!examples/*.md
+!examples/*.html
+
+# Keep README
+!README.md
+!CONTRIBUTING.md
+!LICENSE

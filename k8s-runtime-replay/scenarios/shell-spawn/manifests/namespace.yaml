@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s-replay
+  labels:
+    purpose: runtime-replay
+    managed-by: k8s-runtime-replay

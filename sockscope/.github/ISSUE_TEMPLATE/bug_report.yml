@@ -1,0 +1,43 @@
+name: Bug report
+description: Something doesn't work the way you expected
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: A clear description of the bug, including the exact command you ran.
+      placeholder: |
+        I ran `sockscope inspect --pid 1234` and got ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: sockscope version
+      description: Output of `sockscope --version`
+      placeholder: "v0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: kernel
+    attributes:
+      label: Kernel / distro
+      description: Output of `uname -a` and `/etc/os-release` (first line is fine)
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else
+      description: Container runtime, cgroup version, anything unusual about the host.

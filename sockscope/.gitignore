@@ -1,0 +1,16 @@
+# Binaries
+/sockscope
+/dist/
+
+# Go build artifacts
+*.exe
+*.test
+*.out
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store

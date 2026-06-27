@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scenario",
+  "type": "object",
+  "required": ["id", "template", "task", "success_criteria", "workspace"],
+  "properties": {
+    "id": { "type": "string" },
+    "template": { "type": "string" },
+    "seed": { "type": "integer" },
+    "description": { "type": "string" },
+    "skills_tested": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "task": { "type": "string" },
+    "success_criteria": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "workspace": { "type": "object" }
+  }
+}

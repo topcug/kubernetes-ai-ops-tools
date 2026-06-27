@@ -1,0 +1,61 @@
+<svg width="280" viewBox="0 0 280 300" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>secclear-cli icon</title>
+  <desc>Multiple scanner documents feeding into one clean report with a checkmark shield</desc>
+
+  <rect x="18" y="42" width="72" height="90" rx="5" fill="#ffffff" stroke="#d0d0d0" stroke-width="1"/>
+  <line x1="26" y1="57" x2="82" y2="57" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="66" x2="78" y2="66" stroke="#ed8936" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="75" x2="80" y2="75" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="84" x2="76" y2="84" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="93" x2="80" y2="93" stroke="#ed8936" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="102" x2="78" y2="102" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="111" x2="82" y2="111" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="120" x2="76" y2="120" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="28" y="32" width="72" height="90" rx="5" fill="#ffffff" stroke="#c0c0c0" stroke-width="1"/>
+  <line x1="36" y1="47" x2="92" y2="47" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="56" x2="88" y2="56" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="65" x2="90" y2="65" stroke="#ed8936" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="74" x2="86" y2="74" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="83" x2="90" y2="83" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="92" x2="88" y2="92" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="101" x2="92" y2="101" stroke="#ed8936" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="110" x2="86" y2="110" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="38" y="22" width="72" height="90" rx="5" fill="#ffffff" stroke="#b0b0b0" stroke-width="1"/>
+  <polygon points="97,22 110,35 97,35" fill="#f0ece4"/>
+  <line x1="97" y1="22" x2="110" y2="35" stroke="#b0b0b0" stroke-width="1"/>
+  <line x1="46" y1="42" x2="95" y2="42" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="51" x2="99" y2="51" stroke="#ed8936" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="60" x2="93" y2="60" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="69" x2="97" y2="69" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="78" x2="94" y2="78" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="87" x2="98" y2="87" stroke="#ed8936" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="96" x2="95" y2="96" stroke="#e53e3e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="46" y1="105" x2="97" y2="105" stroke="#cbd5e0" stroke-width="2" stroke-linecap="round"/>
+
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#4a5568" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <path d="M120 57 L148 57" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" marker-end="url(#arr2)"/>
+  <path d="M120 77 L148 77" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" marker-end="url(#arr2)"/>
+  <path d="M120 97 L148 97" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" marker-end="url(#arr2)"/>
+
+  <rect x="152" y="22" width="82" height="110" rx="6" fill="#ffffff" stroke="#90cdf4" stroke-width="2"/>
+  <polygon points="220,22 234,36 220,36" fill="#ebf8ff"/>
+  <line x1="220" y1="22" x2="234" y2="36" stroke="#90cdf4" stroke-width="1.5"/>
+  <line x1="162" y1="50" x2="226" y2="50" stroke="#68d391" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="162" y1="62" x2="220" y2="62" stroke="#68d391" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="162" y1="74" x2="224" y2="74" stroke="#90cdf4" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="162" y1="86" x2="218" y2="86" stroke="#90cdf4" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="162" y1="98" x2="222" y2="98" stroke="#68d391" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="162" y1="110" x2="220" y2="110" stroke="#90cdf4" stroke-width="2.5" stroke-linecap="round"/>
+
+  <path d="M193 -4 L216 5 L216 30 Q216 48 193 57 Q170 48 170 30 L170 5 Z" fill="#2b6cb0" stroke="#90cdf4" stroke-width="1.5"/>
+  <path d="M182 27 L190 35 L206 17" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="140" y="178" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#1a202c">secclear</text>
+  <text x="140" y="204" text-anchor="middle" font-family="monospace" font-size="14" font-weight="400" fill="#4a5568" letter-spacing="4">cli</text>
+</svg>

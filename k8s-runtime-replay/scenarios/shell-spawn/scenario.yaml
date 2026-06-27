@@ -1,0 +1,51 @@
+id: shell-spawn
+version: "0.1.0"
+title: Shell execution inside container
+goal: Reproduce a shell process execution inside a running container
+safety: safe
+namespace: k8s-replay
+
+deploy:
+  manifests:
+    - manifests/namespace.yaml
+    - manifests/workload.yaml
+
+workload:
+  selector: scenario=shell-spawn
+  pod_name: shell-spawn-target
+  container: target
+
+trigger:
+  kind: kubectl-exec
+  command:
+    - /bin/sh
+    - -c
+    - 'echo "shell-spawn triggered at $(date)"; id; ps 2>/dev/null || true'
+
+behavior:
+  description: shell executed inside workload container
+  evidence:
+    - exec_succeeded: true
+    - process_contains: /bin/sh
+
+detection:
+  semantics:
+    - shell execution inside container
+  falco:
+    enabled: true
+    search_patterns:
+      - shell
+      - terminal shell
+    output_patterns:
+      - shell
+      - terminal shell
+    correlation:
+      namespace: k8s-replay
+      workload_selector: scenario=shell-spawn
+
+timeouts:
+  ready_seconds: 60
+  detect_seconds: 20
+
+cleanup:
+  script: cleanup.sh
