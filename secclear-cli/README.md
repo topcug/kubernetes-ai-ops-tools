@@ -6,7 +6,7 @@
 
 Stop parsing JSONs. Get one clean security report from multiple Kubernetes scanners.
 
-![secclear scan demo](./assets/secclear-demo.mp4)
+![secclear scan demo](./assets/secclear-scan.gif)
 
 ## The Problem
 
