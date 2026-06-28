@@ -1,5 +1,7 @@
 # kubernetes-ai-ops-tools
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 <p align="center">
   <img src="./ai-ops.png" alt="kubernetes-ai-ops-tools" width="400" />
 </p>
